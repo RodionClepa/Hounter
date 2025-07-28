@@ -1,0 +1,52 @@
+@use "../variables" as *;
+
+.btn {
+  align-self: center;
+  display: inline-flex;
+  font-size: 1.4rem;
+  font-weight: $weight-semi-bold;
+  line-height: 1;
+  text-transform: capitalize;
+  text-align: center;
+  transition: 0.2s background-color;
+  gap: $space-xs;
+
+  align-items: center;
+
+  border: 1px solid $primary;
+  padding: $space-sm $space-lg;
+  border-radius: 100px;
+  cursor: pointer;
+
+  &__icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    fill: currentColor;
+    vertical-align: middle;
+  }
+
+  &--green {
+    color: $white;
+    background-color: $primary;
+
+    &:hover,
+    &:active {
+      background-color: $primary-dark;
+    }
+  }
+
+  &--white {
+    color: $primary-dark;
+    background-color: $white;
+
+    &:hover,
+    &:active {
+      background-color: $primary-light;
+    }
+  }
+
+  &--icon-only {
+    padding: $space-sm;
+  }
+
+}
