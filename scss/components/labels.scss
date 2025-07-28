@@ -1,0 +1,38 @@
+@use "../variables" as *;
+
+.label {
+  display: inline-flex;
+  font-size: 1.4rem;
+  font-weight: $weight-semi-bold;
+  line-height: 1;
+  text-transform: capitalize;
+  text-align: center;
+  transition: 0.2s background-color;
+  gap: $space-xs;
+
+  align-items: center;
+
+  padding: $space-sm $space-lg;
+  border-radius: 3.2rem;
+
+  &--popular {
+    color: $danger;
+    background: $danger-light;
+    font-weight: $weight-medium;
+    border: 0;
+  }
+
+  &--new-house {
+    color: $info;
+    background: $info-light;
+    font-weight: $weight-medium;
+    border: 0;
+  }
+
+  &--deals {
+    color: $primary-dark;
+    background: $primary-light;
+    font-weight: $weight-medium;
+    border: 0;
+  }
+}

@@ -1,0 +1,157 @@
+@use "../variables" as *;
+
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+
+  &__field {
+    border: 0;
+    outline: 1px solid $grey-1;
+    font-family: inherit;
+    padding: $space-md $space-lg;
+    border-radius: 2.8rem;
+    gap: $space-md;
+    font-size: 1.4rem;
+    font-weight: $weight-medium;
+    line-height: 2.4rem;
+    flex: 1;
+
+    &:focus {
+      outline: 1px solid $info;
+    }
+
+
+    &:invalid {
+      outline: 1px solid $danger;
+
+      &+.form-input__error {
+        visibility: visible;
+      }
+    }
+  }
+
+  &__error {
+    visibility: hidden;
+    color: $danger;
+    font-size: 1.2rem;
+    font-weight: $weight-regular;
+    margin-left: $space-lg;
+  }
+
+  &--location {
+
+    .input-location {
+      display: flex;
+      position: relative;
+
+      &__field {
+        padding-left: 6rem;
+        padding-right: 16rem;
+      }
+
+      &__icon {
+        width: 2.4rem;
+        height: 2.4rem;
+        fill: $secondary;
+        vertical-align: middle;
+        position: absolute;
+        left: 3.6rem;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &__search-button {
+        position: absolute;
+        right: 0.4rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  &--textarea {
+    position: relative;
+
+    .form-input__wrapper {
+      width: 100%;
+    }
+
+    .form-input__field {
+      width: 100%;
+      padding-bottom: 3.2rem;
+      resize: vertical;
+      min-height: 10rem;
+    }
+
+    .form-input__count {
+      position: absolute;
+      bottom: 1rem;
+      right: 1.6rem;
+      font-size: 1.2rem;
+      font-weight: $weight-regular;
+      color: $grey-2;
+      pointer-events: none;
+    }
+  }
+}
+
+.form-checkbox {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  padding-left: 3.6rem;
+  color: $grey-3;
+
+  &__input {
+    position: absolute;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    opacity: 0;
+  }
+
+  &__checkmark {
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
+    border: 1px solid $primary;
+    border-radius: 4px;
+    display: inline-block;
+    margin-right: 8px;
+    position: absolute;
+    left: 0;
+    top: 0px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: none;
+
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      width: 16px;
+      height: 16px;
+      color: $white;
+      background-color: $white;
+      -webkit-mask-image: url("../../img/icons/check.svg");
+      mask-image: url("../../img/icons/check.svg");
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-position: center;
+      mask-position: center;
+
+    }
+  }
+
+  &__input:checked+&__checkmark {
+    background-color: $primary;
+
+    &::after {
+      display: block;
+    }
+  }
+}
