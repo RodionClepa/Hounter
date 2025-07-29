@@ -8,6 +8,7 @@
   &-4 {
     color: $black;
     text-transform: capitalize;
+    line-height: 100%;
   }
 
   &-1 {
@@ -70,4 +71,16 @@
   font-size: 1.4rem;
   line-height: normal;
   font-weight: $weight-semi-bold;
+}
+
+.primary-color {
+  color: $primary;
+}
+
+.grey-2 {
+  color: $grey-2;
+}
+
+.grey-3 {
+  color: $grey-3;
 }
