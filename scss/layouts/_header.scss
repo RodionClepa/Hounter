@@ -1,0 +1,17 @@
+@use "../variables" as *;
+
+.header {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  background-color: $grey-1;
+  width: 100%;
+}
+
+.navigation {
+  &__list {
+    list-style: none;
+    display: flex;
+    gap: $space-lg;
+  }
+}
