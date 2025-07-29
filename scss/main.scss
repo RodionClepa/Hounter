@@ -1,9 +1,15 @@
 @use "base";
 @use "typography";
 @use "variables";
+@use "utilities";
 
 @use "uikit";
+
 @use "components/buttons.scss";
 @use "components/custom-drop-down.scss";
 @use "components/inputs.scss";
 @use "components/labels.scss";
+
+@use "layouts/structure";
+@use "layouts/header";
+@use "layouts/hero";
