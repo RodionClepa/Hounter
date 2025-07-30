@@ -44,10 +44,11 @@
   &__stat {
     &-list {
       list-style: none;
-      display: flex;
-      overflow: scroll;
       gap: $space-md;
-      padding: 1rem;
+
+      &:not(:first-child) {
+        margin-left: $space-md;
+      }
     }
 
     &-item {
