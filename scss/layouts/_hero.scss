@@ -35,7 +35,7 @@
     width: 100%;
     border-radius: 0 0 0 8rem;
 
-    padding: $space-xxl 0 $space-xxl $space-xxl;
+    padding: $space-xxl 0 8rem 0;
     display: flex;
     align-items: flex-end;
     overflow: hidden;
@@ -48,12 +48,12 @@
       padding-left: $space-md;
 
       @media (min-width: $max-width) {
-        animation-play-state: paused;
+        animation: none;
+        transform: translateX(0);
 
         &:not(:first-child) {
           display: none;
         }
-
       }
     }
 
