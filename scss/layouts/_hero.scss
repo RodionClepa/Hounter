@@ -45,9 +45,15 @@
     &-list {
       list-style: none;
       gap: $space-md;
+      padding-left: $space-md;
 
-      &:not(:first-child) {
-        margin-left: $space-md;
+      @media (min-width: $max-width) {
+        animation-play-state: paused;
+
+        &:not(:first-child) {
+          display: none;
+        }
+
       }
     }
 
