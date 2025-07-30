@@ -1,0 +1,86 @@
+@use "variables" as *;
+
+.h {
+
+  &-1,
+  &-2,
+  &-3,
+  &-4 {
+    color: $black;
+    text-transform: capitalize;
+    line-height: 100%;
+  }
+
+  &-1 {
+    font-size: 4rem;
+    font-weight: $weight-black;
+  }
+
+  &-2 {
+    font-size: 3.2rem;
+    font-weight: $weight-semi-bold;
+  }
+
+  &-3 {
+    font-size: 2.4rem;
+    font-weight: $weight-medium;
+  }
+
+  &-4 {
+    font-size: 2rem;
+    font-weight: $weight-semi-bold;
+  }
+}
+
+.subtitle {
+  font-size: 1.8rem;
+  font-weight: $weight-medium;
+}
+
+.medium-text {
+  font-weight: $weight-medium;
+  font-size: 1.6rem;
+  line-height: normal;
+}
+
+.semi-bold-text {
+  font-weight: $weight-semi-bold;
+  font-size: 1.6rem;
+  line-height: normal;
+}
+
+.label {
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  font-weight: $weight-regular;
+}
+
+.label-sm {
+  font-size: 1.2rem;
+  line-height: normal;
+  font-weight: $weight-regular;
+}
+
+.label-md {
+  font-size: 1.4rem;
+  line-height: normal;
+  font-weight: $weight-medium;
+}
+
+.label-semi-bold {
+  font-size: 1.4rem;
+  line-height: normal;
+  font-weight: $weight-semi-bold;
+}
+
+.primary-color {
+  color: $primary;
+}
+
+.grey-2 {
+  color: $grey-2;
+}
+
+.grey-3 {
+  color: $grey-3;
+}

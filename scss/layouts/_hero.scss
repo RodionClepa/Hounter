@@ -1,0 +1,93 @@
+@use "../variables" as *;
+
+.hero {
+  display: flex;
+
+  padding-left: $pad-regular;
+
+  @media (min-width: $max-width) {
+    width: calc(100vw - (100vw - #{$max-width}) / 2);
+  }
+
+  &__intro {
+    margin-top: 30px; // TODO add margin top after doing header
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: $space-xl;
+    padding-right: $pad-regular;
+    width: min-content;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: $space-lg;
+  }
+
+
+  &__image-container {
+    background-image: url("../../img/images/hero-image.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 720px;
+    width: 100%;
+    border-radius: 0 0 0 8rem;
+
+    padding: $space-xxl 0 8rem 0;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+
+  &__stat {
+    &-list {
+      list-style: none;
+      gap: $space-md;
+      padding-left: $space-md;
+
+      @media (min-width: $max-width) {
+        animation: none;
+        transform: translateX(0);
+
+        &:not(:first-child) {
+          display: none;
+        }
+      }
+    }
+
+    &-item {
+      display: flex;
+      gap: $space-md;
+      background-color: $white;
+      box-shadow: 0px 11px 48px 0px #3333330F;
+      padding: $space-lg;
+      border-radius: 3.2rem;
+      min-width: max-content;
+      align-items: center;
+    }
+
+    &-image {
+      display: flex;
+
+      >*:not(:first-child) {
+        margin-left: -2.8rem;
+      }
+    }
+  }
+
+  .partnership {
+    &__list {
+      list-style: none;
+      display: flex;
+      gap: $space-xl;
+    }
+
+    &__logo {
+      width: 8.2rem;
+      height: 6.4rem;
+      object-fit: contain;
+    }
+  }
+}

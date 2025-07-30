@@ -1,0 +1,25 @@
+.stat-carousel {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  display: inline-flex;
+
+  >* {
+    display: inline-flex;
+    animation: 15s carousel-slide infinite linear;
+  }
+
+  &:hover>* {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes carousel-slide {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
