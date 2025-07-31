@@ -49,4 +49,9 @@
     padding: $space-sm;
   }
 
+  &--active {
+    background-color: $primary-light;
+    border: 1px solid transparent;
+  }
+
 }

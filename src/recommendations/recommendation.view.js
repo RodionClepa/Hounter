@@ -1,12 +1,27 @@
+import { DEFAULT_RECOMMENDATION } from "../config.js";
 import { labelView } from "../services/label-view.service.js";
 
 export class RecommendationView {
-  constructor(containerId) {
-    this._container = document.getElementById(containerId);
+  _container = document.getElementById("recommendations-slider");
+  _filterControl = document.querySelector(".filter__list");
+  eventTypes = {
+    filterChange: "filterChange",
+  };
+
+  constructor() {
+    this._listeners = {};
+    this._filterControl.addEventListener(
+      "click",
+      this._handleFilterButtonClicks.bind(this),
+    );
+    const allButtons = [...this._filterControl.querySelectorAll("button")];
+    const preSelectedButton = allButtons.find(
+      (button) => button.dataset.type === DEFAULT_RECOMMENDATION,
+    );
+    preSelectedButton.classList.add("btn--active");
   }
 
   render(data) {
-    console.log("render");
     if (!data || data.length === 0) {
       this._container.innerHTML = "<p>No recommendations available.</p>";
       return;
@@ -15,9 +30,43 @@ export class RecommendationView {
     this._clear();
 
     const markup = data.map((house) => this._generateMarkup(house)).join("");
-    console.log(markup);
 
     this._container.insertAdjacentHTML("afterbegin", markup);
+  }
+
+  _formatMoney(amount) {
+    return "$ " + amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  }
+
+  _clear() {
+    this._container.innerHTML = "";
+  }
+
+  _handleFilterButtonClicks(e) {
+    const clickedButton = e.target.closest("button");
+
+    if (!clickedButton || !this._filterControl.contains(clickedButton)) return;
+
+    const allButtons = this._filterControl.querySelectorAll("button");
+    allButtons.forEach((btn) => btn.classList.remove("btn--active"));
+
+    clickedButton.classList.add("btn--active");
+
+    const type = clickedButton.dataset.type;
+
+    this._notify(this.eventTypes.filterChange, type);
+  }
+
+  subscribe(eventType, listener) {
+    if (!this._listeners[eventType]) {
+      this._listeners[eventType] = [];
+    }
+    this._listeners[eventType].push(listener);
+  }
+
+  _notify(eventType, payload) {
+    if (!this._listeners[eventType]) return;
+    this._listeners[eventType].forEach((listener) => listener(payload));
   }
 
   _generateMarkup(house) {
@@ -50,13 +99,5 @@ export class RecommendationView {
         </div>
       </div>
     `;
-  }
-
-  _formatMoney(amount) {
-    return "$ " + amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-  }
-
-  _clear() {
-    this._container.innerHTML = "";
   }
 }
