@@ -1,0 +1,22 @@
+@use "variables" as *;
+
+.section-max-width {
+  max-width: $max-width;
+
+}
+
+.section-center {
+
+  @media (min-width: $max-width) {
+    margin-left: calc((100vw - $max-width) / 2);
+  }
+}
+
+.user-avatar {
+  width: 5.6rem;
+  height: 5.6rem;
+  object-fit: cover;
+  border: 3px solid $white;
+  border-radius: 50%;
+  box-shadow: 0px 9px 32px 0px #595CDB1A;
+}

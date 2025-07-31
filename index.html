@@ -1,12 +1,190 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title></title>
-        <link href="css/style.css" rel="stylesheet">
-    </head>
-    <body>
-
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hounter</title>
+    <link href="css/main.css" rel="stylesheet" />
+    <script type="module" defer src="src/script.js"></script>
+    <link
+      rel="preload"
+      href="/fonts/Lexend-Black.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/Lexend-Light.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/Lexend-Medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/Lexend-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/Lexend-SemiBold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+  </head>
+  <body>
+    <header class="header section-max-width section-center">
+      <a href="/" class="logo">Hounter</a>
+      <nav class="navigation">
+        <ul class="navigation__list">
+          <li class="navigation__item">
+            <a class="navigation__link" href="#">Link</a>
+          </li>
+          <li class="navigation__item">
+            <a class="navigation__link" href="#">Link</a>
+          </li>
+          <li class="navigation__item">
+            <a class="navigation__link" href="#">Link</a>
+          </li>
+          <li class="navigation__item">
+            <a class="navigation__link" href="#">Link</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="hero section-center">
+        <div class="hero__intro">
+          <div class="hero__text">
+            <h1 class="h-1">
+              find the place to live
+              <span class="primary-color">your dreams</span> easily here
+            </h1>
+            <p class="grey-3">
+              Everything you need about finding your place to live will be here,
+              where it will be easier for you
+            </p>
+          </div>
+          <div class="form-input form-input--location" for="location">
+            <div class="input-location">
+              <svg class="input-location__icon">
+                <use xlink:href="img/icons/sprite.svg#Location"></use>
+              </svg>
+              <input
+                class="form-input__field input-location__field"
+                type="location"
+                id="location"
+                placeholder="Search for the location you want!"
+              />
+              <button class="btn btn--green input-location__search-button">
+                Search
+                <svg class="btn__icon">
+                  <use xlink:href="img/icons/sprite.svg#Arrow"></use>
+                </svg>
+              </button>
+            </div>
+            <span class="form-input__error">Filed erorr. Please fix it</span>
+          </div>
+          <div class="partnership">
+            <p class="grey-2">Our Partnership</p>
+            <ul class="partnership__list">
+              <li class="partnership__item">
+                <img
+                  class="partnership__logo"
+                  alt="Partner Logo"
+                  src="img/images/traveloka.png"
+                />
+              </li>
+              <li class="partnership__item">
+                <img
+                  class="partnership__logo"
+                  alt="Partner Logo"
+                  src="img/images/tiket.png"
+                />
+              </li>
+              <li class="partnership__item">
+                <img
+                  class="partnership__logo"
+                  alt="Partner Logo"
+                  src="img/images/airbnb.png"
+                />
+              </li>
+              <li class="partnership__item">
+                <img
+                  class="partnership__logo"
+                  alt="Partner Logo"
+                  src="img/images/tripadvisor.png"
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="hero__image-container">
+          <div class="stat-carousel">
+            <ul class="carousel-track hero__stat-list" id="stats-list">
+              <li class="hero__stat-item">
+                <div class="hero__stat-image hero__stat-image--stack">
+                  <img
+                    class="user-avatar"
+                    src="img/assets/avatar-4.jpg"
+                    alt="Avatar 4"
+                  />
+                  <img
+                    class="user-avatar"
+                    src="img/assets/avatar-5.jpg"
+                    alt="Avatar 5"
+                  />
+                  <img
+                    class="user-avatar"
+                    src="img/assets/avatar-6.jpg"
+                    alt="Avatar 6"
+                  />
+                </div>
+                <div class="hero__stat-info">
+                  <p class="semi-bold-text">1K+ People</p>
+                  <p class="label-sm grey-2">Successfully Getting Home</p>
+                </div>
+              </li>
+              <li class="hero__stat-item">
+                <div class="hero__stat-image hero__stat-image--stack">
+                  <img
+                    class="user-avatar"
+                    src="img/assets/house-1.png"
+                    alt="Avatar 4"
+                  />
+                </div>
+                <div class="hero__stat-info">
+                  <p class="semi-bold-text">56 Houses</p>
+                  <p class="label-sm grey-2">Soid Monthly</p>
+                </div>
+              </li>
+              <li class="hero__stat-item">
+                <div class="hero__stat-image hero__stat-image--stack">
+                  <img
+                    class="user-avatar"
+                    src="img/assets/avatar-10.jpg"
+                    alt="Avatar 4"
+                  />
+                </div>
+                <div class="hero__stat-info">
+                  <p class="semi-bold-text">4K+ People</p>
+                  <p class="label-sm grey-2">People Looking for New Homes</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
