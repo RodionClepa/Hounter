@@ -17,5 +17,5 @@ const init = function () {
 init();
 
 const model = new RecommendationModel();
-const view = new RecommendationView("recommendations-slider");
+const view = new RecommendationView();
 const controller = new RecommendationController(model, view);
