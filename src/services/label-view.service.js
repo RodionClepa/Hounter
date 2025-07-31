@@ -1,5 +1,4 @@
 export function labelView(type) {
-  console.log(type);
   if (type === "popular") {
     return `
       <span class="slider__image-label label label--popular">
