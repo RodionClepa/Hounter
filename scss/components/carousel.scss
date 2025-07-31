@@ -4,12 +4,12 @@
   position: relative;
   display: inline-flex;
 
-  >* {
+  >.carousel-track {
     display: inline-flex;
     animation: 15s carousel-slide infinite linear;
   }
 
-  &:hover>* {
+  &:hover>.carousel-track {
     animation-play-state: paused;
   }
 }
