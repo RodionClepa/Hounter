@@ -1,7 +1,8 @@
 import { DEFAULT_RECOMMENDATION } from "../config.js";
 import { labelView } from "../services/label-view.service.js";
+import { View } from "../View.js";
 
-export class RecommendationView {
+export class RecommendationView extends View {
   _container = document.getElementById("recommendations-slider");
   _filterControl = document.querySelector(".filter__list");
   eventTypes = {
@@ -9,6 +10,7 @@ export class RecommendationView {
   };
 
   constructor() {
+    super();
     this._listeners = {};
     this._filterControl.addEventListener(
       "click",
@@ -21,25 +23,8 @@ export class RecommendationView {
     preSelectedButton.classList.add("btn--active");
   }
 
-  render(data) {
-    if (!data || data.length === 0) {
-      this._container.innerHTML = "<p>No recommendations available.</p>";
-      return;
-    }
-
-    this._clear();
-
-    const markup = data.map((house) => this._generateMarkup(house)).join("");
-
-    this._container.insertAdjacentHTML("afterbegin", markup);
-  }
-
   _formatMoney(amount) {
     return "$ " + amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-  }
-
-  _clear() {
-    this._container.innerHTML = "";
   }
 
   _handleFilterButtonClicks(e) {
@@ -57,19 +42,11 @@ export class RecommendationView {
     this._notify(this.eventTypes.filterChange, type);
   }
 
-  subscribe(eventType, listener) {
-    if (!this._listeners[eventType]) {
-      this._listeners[eventType] = [];
-    }
-    this._listeners[eventType].push(listener);
+  _generateMarkup() {
+    return this._data.map((house) => this._generateSlide(house)).join("");
   }
 
-  _notify(eventType, payload) {
-    if (!this._listeners[eventType]) return;
-    this._listeners[eventType].forEach((listener) => listener(payload));
-  }
-
-  _generateMarkup(house) {
+  _generateSlide(house) {
     return `
       <div class="slider__item">
         <div class="slider__image-container">
