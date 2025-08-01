@@ -1,4 +1,5 @@
 import { DEFAULT_RECOMMENDATION } from "../config.js";
+import { EventBus } from "../EventBus.js";
 import { labelView } from "../services/label-view.service.js";
 import { View } from "../View.js";
 
@@ -13,7 +14,7 @@ export class RecommendationView extends View {
 
   constructor() {
     super();
-    this._listeners = {};
+    this.eventBus = new EventBus(this.eventTypes);
     this._filterControl.addEventListener(
       "click",
       this._handleFilterButtonClicks.bind(this),
@@ -38,7 +39,7 @@ export class RecommendationView extends View {
     allButtons.forEach((btn) => btn.classList.remove("btn--active"));
     clickedButton.classList.add("btn--active");
     const type = clickedButton.dataset.type;
-    this._notify(this.eventTypes.filterChange, type);
+    this.eventBus.notify(this.eventTypes.filterChange, type);
   }
 
   _handleSliderButtonClicks(e) {
@@ -46,7 +47,31 @@ export class RecommendationView extends View {
 
     if (!clickedButton || !this._sliderControl.contains(clickedButton)) return;
     const type = clickedButton.dataset.type;
-    this._notify(this.eventTypes.sliderNavigate, type);
+    this.eventBus.notify(this.eventTypes.sliderNavigate, type);
+  }
+
+  subscribe(eventType, listener) {
+    this.eventBus.subscribe(eventType, listener);
+  }
+
+  setSliderButtonColor(direction, color) {
+    const validDirections = ["prev", "next"];
+    const validColors = ["white", "green"];
+
+    if (!validDirections.includes(direction) || !validColors.includes(color)) {
+      return;
+    }
+
+    const button = this._sliderControl.querySelector(
+      `[data-type="${direction}"]`,
+    );
+
+    if (!button) {
+      return;
+    }
+
+    validColors.forEach((cls) => button.classList.remove(`btn--${cls}`));
+    button.classList.add(`btn--${color}`);
   }
 
   _generateMarkup() {
