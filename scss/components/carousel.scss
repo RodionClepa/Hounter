@@ -6,6 +6,10 @@
 
   >.carousel-track {
     display: inline-flex;
+
+  }
+
+  .animate {
     animation: 15s carousel-slide infinite linear;
   }
 
