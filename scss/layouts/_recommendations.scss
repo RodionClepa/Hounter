@@ -38,12 +38,23 @@
     gap: $space-xl;
     padding-bottom: 1.5rem;
     margin-top: $space-xl;
+    scroll-behavior: smooth;
+
+    &.drag {
+      scroll-behavior: auto;
+
+      .slider__item {
+        cursor: grab;
+        user-select: none;
+      }
+    }
   }
 
   &__item {
     display: flex;
     flex-direction: column;
     gap: $space-lg;
+    cursor: pointer;
 
     &--hidden {
       visibility: hidden;
