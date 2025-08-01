@@ -5,8 +5,10 @@ import { View } from "../View.js";
 export class RecommendationView extends View {
   _container = document.getElementById("recommendations-slider");
   _filterControl = document.querySelector(".filter__list");
+  _sliderControl = document.querySelector(".slider__control");
   eventTypes = {
     filterChange: "filterChange",
+    sliderNavigate: "sliderNavigate",
   };
 
   constructor() {
@@ -16,15 +18,15 @@ export class RecommendationView extends View {
       "click",
       this._handleFilterButtonClicks.bind(this),
     );
+    this._sliderControl.addEventListener(
+      "click",
+      this._handleSliderButtonClicks.bind(this),
+    );
     const allButtons = [...this._filterControl.querySelectorAll("button")];
     const preSelectedButton = allButtons.find(
       (button) => button.dataset.type === DEFAULT_RECOMMENDATION,
     );
     preSelectedButton.classList.add("btn--active");
-  }
-
-  _formatMoney(amount) {
-    return "$ " + amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   }
 
   _handleFilterButtonClicks(e) {
@@ -34,16 +36,25 @@ export class RecommendationView extends View {
 
     const allButtons = this._filterControl.querySelectorAll("button");
     allButtons.forEach((btn) => btn.classList.remove("btn--active"));
-
     clickedButton.classList.add("btn--active");
-
     const type = clickedButton.dataset.type;
-
     this._notify(this.eventTypes.filterChange, type);
+  }
+
+  _handleSliderButtonClicks(e) {
+    const clickedButton = e.target.closest("button");
+
+    if (!clickedButton || !this._sliderControl.contains(clickedButton)) return;
+    const type = clickedButton.dataset.type;
+    this._notify(this.eventTypes.sliderNavigate, type);
   }
 
   _generateMarkup() {
     return this._data.map((house) => this._generateSlide(house)).join("");
+  }
+
+  _formatMoney(amount) {
+    return "$ " + amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   }
 
   _generateSlide(house) {
