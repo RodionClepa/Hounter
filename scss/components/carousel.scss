@@ -1,3 +1,5 @@
+@use "../mixins" as *;
+
 .stat-carousel {
   overflow: hidden;
   white-space: nowrap;
@@ -11,6 +13,11 @@
 
   .animate {
     animation: 15s carousel-slide infinite linear;
+
+    @include mediaCarouselStop {
+      animation: none;
+      transform: translateX(0);
+    }
   }
 
   &:hover>.carousel-track {
