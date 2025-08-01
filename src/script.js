@@ -20,11 +20,7 @@ const init = function () {
     ".slider__container",
     ".slider__item",
   );
-  const recommendationModel = new RecommendationModel();
-  const recommendationView = new RecommendationView();
-  const recommendationController = new RecommendationController(
-    recommendationModel,
-    recommendationView,
-  );
+
+  const recommendationController = new RecommendationController();
 };
 init();
