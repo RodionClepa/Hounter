@@ -21,20 +21,6 @@ export class DraggableSlider {
     this._slider.addEventListener("scroll", this._onScroll.bind(this));
   }
 
-  _onScroll() {
-    if (this._scrollTimeout) return;
-
-    this._scrollTimeout = setTimeout(() => {
-      this._updateCurrentCard();
-      this._scrollTimeout = null;
-    }, 100);
-  }
-
-  _updateCurrentCard() {
-    const totalCardWidth = this._cardWidth + this._spaceBetween;
-    this._currentCard = Math.round(this._slider.scrollLeft / totalCardWidth);
-  }
-
   _start(event) {
     this._isDrag = true;
     this._pointerPosition = event.pageX;
@@ -46,12 +32,24 @@ export class DraggableSlider {
     if (!this._isDrag) return;
     this._slider.scrollLeft =
       this._sliderScrollLeft - (event.pageX - this._pointerPosition);
+    console.log(maxScrollLeft);
+    console.log(this._slider.scrollLeft);
+  }
+
+  getMaxScrollLeft() {
+    return this._slider.scrollWidth - this._slider.clientWidth;
   }
 
   _stop() {
     this._isDrag = false;
-    this._updateCurrentCard();
-    const snappedPosition = this.getSnappedPosition();
+    let snappedPosition = 0;
+    const maxScrollLeft = this.getMaxScrollLeft();
+    if (maxScrollLeft - 100 <= this._slider.scrollLeft) {
+      snappedPosition = maxScrollLeft;
+    } else {
+      this._updateCurrentCard();
+      snappedPosition = this.getSnappedPosition();
+    }
     this.smoothScroll(snappedPosition);
     this._slider.classList.remove("drag");
   }
@@ -65,6 +63,20 @@ export class DraggableSlider {
       left: position,
       behavior: "smooth",
     });
+  }
+
+  _onScroll() {
+    if (this._scrollTimeout) return;
+
+    this._scrollTimeout = setTimeout(() => {
+      this._updateCurrentCard();
+      this._scrollTimeout = null;
+    }, 100);
+  }
+
+  _updateCurrentCard() {
+    const totalCardWidth = this._cardWidth + this._spaceBetween;
+    this._currentCard = Math.round(this._slider.scrollLeft / totalCardWidth);
   }
 
   getCardWidth() {

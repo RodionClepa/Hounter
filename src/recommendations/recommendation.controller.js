@@ -1,9 +1,11 @@
 import { DEFAULT_RECOMMENDATION } from "../config.js";
+import { RecommendationModel } from "./recommendaiton.model.js";
+import { RecommendationView } from "./recommendation.view.js";
 
 export class RecommendationController {
-  constructor(model, view) {
-    this.model = model;
-    this.view = view;
+  constructor() {
+    this.model = new RecommendationModel();
+    this.view = new RecommendationView();
 
     this.model.subscribe(this.model.eventTypes.dataChange, (data) =>
       this.view.render(data),
