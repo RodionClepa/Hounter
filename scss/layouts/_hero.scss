@@ -1,4 +1,5 @@
 @use "../variables" as *;
+@use "../mixins" as *;
 
 .hero {
   display: flex;
@@ -47,10 +48,7 @@
       gap: $space-md;
       padding-left: $space-md;
 
-      @media (min-width: $max-width) {
-        animation: none;
-        transform: translateX(0);
-
+      @include mediaCarouselStop {
         &:not(:first-child) {
           display: none;
         }
