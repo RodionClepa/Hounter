@@ -1,4 +1,10 @@
+import { EventBus } from "../EventBus.js";
+
 export class DraggableSlider {
+  eventTypes = {
+    currentCardUpdated: "currentCardUpdated",
+  };
+
   constructor(container, item) {
     this._slider = document.querySelector(container);
     if (!this._slider) {
@@ -31,6 +37,9 @@ export class DraggableSlider {
     this._slider.addEventListener("mouseup", this._stopHandler);
     this._slider.addEventListener("mouseleave", this._stopHandler);
     this._slider.addEventListener("scroll", this._onScrollHandler);
+    this._DELAYSCROLL = 500;
+
+    this.eventBus = new EventBus(this.eventTypes);
   }
 
   _start(event) {
@@ -68,7 +77,7 @@ export class DraggableSlider {
     this._slider.classList.remove("drag");
   }
 
-  _isNearEnd() {
+  isNearEnd() {
     const maxScrollLeft = this._getMaxScrollLeft();
     return this._slider.scrollLeft >= maxScrollLeft - 50;
   }
@@ -77,7 +86,7 @@ export class DraggableSlider {
     let snappedPosition;
     this._updateCurrentCard();
 
-    if (this._isNearEnd()) {
+    if (this.isNearEnd()) {
       snappedPosition = this._getMaxScrollLeft();
     } else {
       snappedPosition = this._getSnappedPosition();
@@ -91,7 +100,6 @@ export class DraggableSlider {
       Math.floor(
         this._slider.scrollWidth / (this._cardWidth + this._spaceBetween),
       ) - this._getMaxCardFit();
-    console.log(this._getMaxCardFit());
     this._currentCard = Math.min(this._currentCard + 1, maxCard + 1);
     const newPos = this._getSnappedPosition();
     this._smoothScroll(newPos);
@@ -120,7 +128,7 @@ export class DraggableSlider {
 
     setTimeout(() => {
       this._systemScroll = false;
-    }, 500);
+    }, this._DELAYSCROLL);
   }
 
   _onScroll() {
@@ -139,6 +147,15 @@ export class DraggableSlider {
   _updateCurrentCard() {
     const totalCardWidth = this._cardWidth + this._spaceBetween;
     this._currentCard = Math.round(this._slider.scrollLeft / totalCardWidth);
+    this.eventBus.notify(this.eventTypes.currentCardUpdated);
+  }
+
+  getCurrentCard() {
+    return this._currentCard;
+  }
+
+  subscribe(eventType, listener) {
+    this.eventBus.subscribe(eventType, listener);
   }
 
   destroy() {
