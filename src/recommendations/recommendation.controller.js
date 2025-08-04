@@ -57,8 +57,6 @@ export class RecommendationController {
     } else {
       this.slider.scrollPrev();
     }
-
-    this.debouncedButtonControl();
   }
 
   _updateNavigationButtons() {

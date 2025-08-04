@@ -96,11 +96,10 @@ export class DraggableSlider {
   }
 
   scrollNext() {
-    const maxCard =
-      Math.floor(
-        this._slider.scrollWidth / (this._cardWidth + this._spaceBetween),
-      ) - this._getMaxCardFit();
-    this._currentCard = Math.min(this._currentCard + 1, maxCard + 1);
+    this._currentCard =
+      this._currentCard < this._countItems()
+        ? this._currentCard + 1
+        : this._countItems();
     const newPos = this._getSnappedPosition();
     this._smoothScroll(newPos);
   }
@@ -145,9 +144,22 @@ export class DraggableSlider {
     }, 100);
   }
 
+  _countItems() {
+    const items = this._slider.querySelectorAll(this._itemClass);
+    return items.length;
+  }
+
   _updateCurrentCard() {
     const totalCardWidth = this._cardWidth + this._spaceBetween;
-    this._currentCard = Math.ceil(this._slider.scrollLeft / totalCardWidth);
+    const scrollPosition = this._slider.scrollLeft / totalCardWidth;
+    const maxVisibleStartIndex = this._countItems() - this._getMaxCardFit();
+
+    if (Math.ceil(scrollPosition) === maxVisibleStartIndex) {
+      this._currentCard = Math.ceil(scrollPosition);
+    } else {
+      this._currentCard = Math.round(scrollPosition);
+    }
+
     this.eventBus.notify(this.eventTypes.currentCardUpdated);
   }
 
