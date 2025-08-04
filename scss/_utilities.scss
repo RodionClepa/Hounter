@@ -74,6 +74,11 @@
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
+
+    &--big {
+      width: 5.6rem;
+      height: 5.6rem;
+    }
   }
 
   &__add {
