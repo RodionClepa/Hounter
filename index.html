@@ -185,6 +185,77 @@
           </div>
         </div>
       </section>
+      <section class="recommendations section-center">
+        <p class="description-text">Our Recommendation</p>
+        <div class="p-right slider__header">
+          <h2 class="h-2">Featured House</h2>
+          <ul class="filter__list">
+            <li class="filter__item">
+              <button class="btn btn--white" data-type="house">
+                <svg class="btn__icon">
+                  <use xlink:href="img/icons/sprite.svg#House"></use>
+                </svg>
+                House
+              </button>
+            </li>
+            <li class="filter__item">
+              <button class="btn btn--white" data-type="villa">
+                <svg class="btn__icon">
+                  <use xlink:href="img/icons/sprite.svg#Villa"></use>
+                </svg>
+                Villa
+              </button>
+            </li>
+            <li class="filter__item">
+              <button class="btn btn--white" data-type="apartment">
+                <svg class="btn__icon">
+                  <use xlink:href="img/icons/sprite.svg#Apartment"></use>
+                </svg>
+                Apartment
+              </button>
+            </li>
+          </ul>
+          <div class="slider__control">
+            <button
+              data-type="prev"
+              class="slider__prev-btn btn btn--icon-only btn--white"
+            >
+              <svg class="btn__icon">
+                <use xlink:href="img/icons/sprite.svg#Arrow"></use>
+              </svg>
+            </button>
+            <button
+              data-type="next"
+              class="slider__next-btn btn btn--icon-only btn--green"
+            >
+              <svg class="btn__icon">
+                <use xlink:href="img/icons/sprite.svg#Arrow"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="slider__container" id="recommendations-slider">
+          <div class="slider__item slider__item--hidden">
+            <div class="slider__image-container">
+              <!-- <img -->
+              <!--   src="${house.image}" -->
+              <!--   alt="${house.name}" -->
+              <!--   class="slider__image" -->
+              <!-- /> -->
+            </div>
+            <div class="slider__item-info">
+              <h3 class="h-3">house.name</h3>
+              <h4 class="h-4 grey-3">$ 00000000000</h4>
+            </div>
+            <div class="contact-info">
+              <div class="contact-info__add">
+                <p class="subtitle">house.owner.name</p>
+                <p class="grey-2">house.owner.address</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   </body>
 </html>
