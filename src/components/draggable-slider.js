@@ -128,6 +128,7 @@ export class DraggableSlider {
 
     setTimeout(() => {
       this._systemScroll = false;
+      this._updateCurrentCard();
     }, this._DELAYSCROLL);
   }
 
@@ -146,7 +147,7 @@ export class DraggableSlider {
 
   _updateCurrentCard() {
     const totalCardWidth = this._cardWidth + this._spaceBetween;
-    this._currentCard = Math.round(this._slider.scrollLeft / totalCardWidth);
+    this._currentCard = Math.ceil(this._slider.scrollLeft / totalCardWidth);
     this.eventBus.notify(this.eventTypes.currentCardUpdated);
   }
 
