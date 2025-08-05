@@ -66,7 +66,7 @@ export class RecommendationController {
     if (this.slider.getCurrentCard() === 0) {
       this.view.setSliderButtonColor("prev", "white");
     }
-    if (this.slider.isNearEnd()) {
+    if (this.slider.isEnd()) {
       this.view.setSliderButtonColor("next", "white");
     }
   }
