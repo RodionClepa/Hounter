@@ -35,7 +35,7 @@
     padding-bottom: 1.5rem;
     margin-top: $space-xl;
     scroll-behavior: smooth;
-    padding-inline-start: $horizontal-margin;
+    padding-inline-start: max($pad-regular, calc($horizontal-margin + $pad-regular ));
     padding-inline-end: 6rem;
 
     &.drag {
