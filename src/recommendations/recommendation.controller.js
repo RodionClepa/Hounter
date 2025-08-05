@@ -12,6 +12,7 @@ export class RecommendationController {
     this.model = new RecommendationModel();
     this.view = new RecommendationView();
     this.slider = draggableSlider;
+    this._currentType = null;
 
     this.model.subscribe(this.model.eventTypes.dataChange, (data) =>
       this.view.render(data),
@@ -35,18 +36,32 @@ export class RecommendationController {
       this.debouncedButtonControl(),
     );
 
-    this.model.fetchData(DEFAULT_RECOMMENDATION).catch((err) => {
-      console.error("Failed to load recommendations:", err);
-      this.view.render([]);
-    });
+    this.model
+      .fetchAllAndMergeData(["apartment", "house", "villa"])
+      .catch((err) => {
+        console.error("Failed to load recommendations:", err);
+        this.view.render([]);
+      });
   }
 
   updateDisplayEstate(type) {
+    if (type !== this._currentType) {
+      this._currentType = type;
+      this.model.fetchData(this._currentType).catch((err) => {
+        console.error("Failed to load recommendations:", err);
+        this.view.render([]);
+      });
+    } else {
+      this._currentType = null;
+      this.model
+        .fetchAllAndMergeData(["apartment", "house", "villa"])
+        .catch((err) => {
+          console.error("Failed to load recommendations:", err);
+          this.view.render([]);
+        });
+      this.view.deselectFilterButton();
+    }
     this.slider.scrollStart();
-    this.model.fetchData(type).catch((err) => {
-      console.error("Failed to load recommendations:", err);
-      this.view.render([]);
-    });
   }
 
   slideNavigate(type) {
