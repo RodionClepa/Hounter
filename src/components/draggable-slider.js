@@ -77,16 +77,15 @@ export class DraggableSlider {
     this._slider.classList.remove("drag");
   }
 
-  isNearEnd() {
-    const maxScrollLeft = this._getMaxScrollLeft();
-    return this._slider.scrollLeft >= maxScrollLeft - 50;
+  isEnd() {
+    return this._currentCard === this._countItems() - 1;
   }
 
   _moveToSnappedPosition() {
     let snappedPosition;
     this._updateCurrentCard();
 
-    if (this.isNearEnd()) {
+    if (this.isEnd()) {
       snappedPosition = this._getMaxScrollLeft();
     } else {
       snappedPosition = this._getSnappedPosition();
