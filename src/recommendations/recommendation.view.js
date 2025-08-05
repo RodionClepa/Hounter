@@ -23,11 +23,6 @@ export class RecommendationView extends View {
       "click",
       this._handleSliderButtonClicks.bind(this),
     );
-    const allButtons = [...this._filterControl.querySelectorAll("button")];
-    const preSelectedButton = allButtons.find(
-      (button) => button.dataset.type === DEFAULT_RECOMMENDATION,
-    );
-    preSelectedButton.classList.add("btn--active");
   }
 
   _handleFilterButtonClicks(e) {
@@ -40,6 +35,11 @@ export class RecommendationView extends View {
     clickedButton.classList.add("btn--active");
     const type = clickedButton.dataset.type;
     this.eventBus.notify(this.eventTypes.filterChange, type);
+  }
+
+  deselectFilterButton() {
+    const allButtons = [...this._filterControl.querySelectorAll("button")];
+    allButtons.forEach((button) => button.classList.remove("btn--active"));
   }
 
   _handleSliderButtonClicks(e) {

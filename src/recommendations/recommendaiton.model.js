@@ -23,6 +23,21 @@ export class RecommendationModel {
     }
   }
 
+  async fetchAllAndMergeData(types = []) {
+    try {
+      const fetchPromises = types.map((type) =>
+        apiService.get(`${DATA_URL}recommendations-${type}.json`),
+      );
+      const results = await Promise.all(fetchPromises);
+      const mergedData = results.flat();
+
+      this._data = mergedData;
+      this._notify(this.eventTypes.dataChange, this._data);
+    } catch (error) {
+      console.error("Failed to load and merge all recommendations:", error);
+    }
+  }
+
   getData() {
     return this._data;
   }
