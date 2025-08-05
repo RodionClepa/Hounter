@@ -6,7 +6,7 @@
 
 .section-center {
   @media (min-width: $max-width) {
-    margin-left: calc((100vw - $max-width) / 2);
+    margin-left: $horizontal-margin;
   }
 }
 

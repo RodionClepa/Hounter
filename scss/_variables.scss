@@ -38,8 +38,8 @@ $space-xxl: 4.8rem; // 48px
 $radius-md: 0.8rem;
 
 $max-width: 1440px;
-
 $carousel-add-width: 200px;
+$horizontal-margin: calc((100vw - #{$max-width}) / 2);
 
 $pad-regular: 12.4rem;
 $pad-top: 12rem;
