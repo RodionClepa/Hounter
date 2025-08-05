@@ -1,12 +1,10 @@
 @use "../variables" as *;
 
 .offer {
-  padding: 0 $pad-regular;
-
   &__container {
     display: flex;
     flex-wrap: wrap;
-
+    gap: 12rem;
   }
 
   &__info-container {
@@ -14,7 +12,7 @@
     padding: $space-xs;
     display: flex;
     flex-direction: column;
-    gap: $space-sm;
+    gap: $space-xl;
 
     .house-details {
       display: flex;
@@ -49,13 +47,64 @@
         justify-content: space-between;
         margin-top: $space-md;
       }
-
-
-
     }
   }
 
   &__media {
     flex: 1 1 524px;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+
+    .video {
+      height: 90%;
+      width: 90%;
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      &__image {
+        width: 100%;
+        height: 100%;
+
+      }
+
+      &__button {
+        all: unset;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        cursor: pointer;
+        display: flex;
+      }
+    }
+
+
+    .media-list {
+      position: absolute;
+      display: flex;
+      width: 100%;
+      height: 36%;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      align-items: flex-end;
+      gap: $space-xs;
+    }
+  }
+
+  &__image {
+    width: 56%;
+    height: 100%;
+    border-radius: 0.8rem;
+    object-fit: cover;
+
+    &:not(&:first-child) {
+      width: 96px;
+      height: 80px;
+    }
   }
 }
