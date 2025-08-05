@@ -5,25 +5,26 @@ export class DraggableSlider {
     currentCardUpdated: "currentCardUpdated",
   };
 
-  constructor(container, item) {
-    this._slider = document.querySelector(container);
+  constructor(containerSelector, itemSelector) {
+    this._slider = document.querySelector(containerSelector);
     if (!this._slider) {
-      throw new Error(`Container '${container}' not found`);
-    }
-    this._sliderItem = this._slider.querySelector(item);
-    if (!this._sliderItem) {
-      throw new Error(`Item '${item}' not found in container`);
+      throw new Error(`Container '${containerSelector}' not found`);
     }
 
-    this._itemClass = item;
+    this._sliderItem = this._slider.querySelector(itemSelector);
+    if (!this._sliderItem) {
+      throw new Error(`Item '${itemSelector}' not found in container`);
+    }
+
+    this._itemClass = itemSelector;
 
     this._pointerPosition = 0;
     this._sliderScrollLeft = 0;
     this._isDrag = false;
 
     this._cardWidth = this._sliderItem.offsetWidth;
-    this._spaceBetween =
-      parseInt(window.getComputedStyle(this._slider).gap) || 0;
+    this._style = window.getComputedStyle(this._slider);
+    this._spaceBetween = parseInt(this._style.gap) || 0;
     this._currentCard = 0;
 
     this._startHandler = this._start.bind(this);
@@ -53,18 +54,8 @@ export class DraggableSlider {
     if (!this._isDrag) {
       return;
     }
-    this._slider.scrollLeft =
-      this._sliderScrollLeft - (event.pageX - this._pointerPosition);
-  }
-
-  _getMaxScrollLeft() {
-    return this._slider.scrollWidth - this._slider.clientWidth;
-  }
-
-  _getMaxCardFit() {
-    return Math.trunc(
-      this._slider.clientWidth / (this._cardWidth + this._spaceBetween),
-    );
+    const delta = event.pageX - this._pointerPosition;
+    this._slider.scrollLeft = this._sliderScrollLeft - delta;
   }
 
   _stop() {
@@ -72,13 +63,38 @@ export class DraggableSlider {
       return;
     }
     this._moveToSnappedPosition();
-
     this._isDrag = false;
     this._slider.classList.remove("drag");
   }
 
+  _getMaxScrollLeft() {
+    return this._slider.scrollWidth - this._slider.clientWidth;
+  }
+
+  _getMaxVisibleCards() {
+    return Math.trunc(
+      this._slider.clientWidth / (this._cardWidth + this._spaceBetween),
+    );
+  }
+
+  _getPaddingStart() {
+    return parseInt(this._style.paddingInlineStart) || 0;
+  }
+
+  _getPaddingEnd() {
+    return parseInt(this._style.paddingInlineEnd) || 0;
+  }
+
   isEnd() {
-    return this._currentCard === this._countItems() - 1;
+    return (
+      this._slider.scrollLeft > this._getMaxScrollLeft() - this._getPaddingEnd()
+    );
+  }
+
+  isStart() {
+    return (
+      this._slider.scrollLeft < this._getPaddingStart() + this._cardWidth / 3
+    );
   }
 
   _moveToSnappedPosition() {
@@ -87,6 +103,8 @@ export class DraggableSlider {
 
     if (this.isEnd()) {
       snappedPosition = this._getMaxScrollLeft();
+    } else if (this.isStart()) {
+      snappedPosition = 0;
     } else {
       snappedPosition = this._getSnappedPosition();
     }
@@ -95,18 +113,13 @@ export class DraggableSlider {
   }
 
   scrollNext() {
-    this._currentCard =
-      this._currentCard < this._countItems()
-        ? this._currentCard + 1
-        : this._countItems();
-    const newPos = this._getSnappedPosition();
-    this._smoothScroll(newPos);
+    this._currentCard = Math.min(this._currentCard + 1, this._countItems() - 1);
+    this._smoothScroll(this._getSnappedPosition());
   }
 
   scrollPrev() {
     this._currentCard = Math.max(this._currentCard - 1, 0);
-    const newPos = this._getSnappedPosition();
-    this._smoothScroll(newPos);
+    this._smoothScroll(this._getSnappedPosition());
   }
 
   scrollStart() {
@@ -114,7 +127,11 @@ export class DraggableSlider {
   }
 
   _getSnappedPosition() {
-    return this._currentCard * (this._cardWidth + this._spaceBetween);
+    if (this._currentCard === 0) {
+      return 0;
+    }
+    const cardOffset = this._cardWidth + this._spaceBetween;
+    return this._getPaddingStart() + this._currentCard * cardOffset;
   }
 
   _smoothScroll(position) {
@@ -144,19 +161,18 @@ export class DraggableSlider {
   }
 
   _countItems() {
-    const items = this._slider.querySelectorAll(this._itemClass);
-    return items.length;
+    return this._slider.querySelectorAll(this._itemClass).length;
   }
 
   _updateCurrentCard() {
-    const totalCardWidth = this._cardWidth + this._spaceBetween;
-    const scrollPosition = this._slider.scrollLeft / totalCardWidth;
-    const maxVisibleStartIndex = this._countItems() - this._getMaxCardFit();
-
-    if (Math.ceil(scrollPosition) === maxVisibleStartIndex) {
-      this._currentCard = Math.ceil(scrollPosition);
+    if (this.isStart()) {
+      this._currentCard = 0;
+    } else if (this.isEnd()) {
+      this._currentCard = this._countItems() - this._getMaxVisibleCards();
     } else {
-      this._currentCard = Math.round(scrollPosition);
+      const offset = this._slider.scrollLeft - this._getPaddingStart();
+      const totalCardWidth = this._cardWidth + this._spaceBetween;
+      this._currentCard = Math.round(Math.abs(offset) / totalCardWidth);
     }
 
     this.eventBus.notify(this.eventTypes.currentCardUpdated);

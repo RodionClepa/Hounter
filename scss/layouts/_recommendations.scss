@@ -1,9 +1,5 @@
 @use "../variables" as *;
 
-.recommendations {
-  padding-left: $pad-regular;
-}
-
 .slider {
   &__header {
     display: flex;
@@ -39,6 +35,8 @@
     padding-bottom: 1.5rem;
     margin-top: $space-xl;
     scroll-behavior: smooth;
+    padding-inline-start: $horizontal-margin;
+    padding-inline-end: 6rem;
 
     &.drag {
       scroll-behavior: auto;
