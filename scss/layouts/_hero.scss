@@ -10,7 +10,6 @@
     flex-direction: column;
     justify-content: center;
     gap: $space-xl;
-    padding-right: $pad-regular;
     width: min-content;
   }
 
@@ -42,7 +41,7 @@
       gap: $space-md;
       padding-left: $space-md;
 
-      @include mediaCarouselStop {
+      @include mediaCarouselStop(calc($max-width + $carousel-add-width)) {
         &:not(:first-child) {
           display: none;
         }

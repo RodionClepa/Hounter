@@ -2,14 +2,20 @@
 
 .section-max-width {
   max-width: $max-width;
-
 }
 
 .section-center {
-
   @media (min-width: $max-width) {
     margin-left: calc((100vw - $max-width) / 2);
   }
+}
+
+.p-left {
+  padding-left: $pad-regular;
+}
+
+.p-right {
+  padding-right: $pad-regular;
 }
 
 .user-avatar {

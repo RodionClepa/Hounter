@@ -1,7 +1,7 @@
 @use "variables" as *;
 
-@mixin mediaCarouselStop {
-  @media (min-width: $max-width) {
+@mixin mediaCarouselStop($min-width: $max-width) {
+  @media (min-width: $min-width) {
     @content;
   }
 }
