@@ -124,8 +124,8 @@ export class CustomDropdown {
       (el) => el.dataset.id === li.dataset.id,
     );
     if (index !== -1) {
-      this.selectOption(index);
-      this.close();
+      this.focusedOption = index;
+      this.closeSelect();
     }
   }
 
