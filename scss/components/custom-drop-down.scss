@@ -24,7 +24,7 @@
     min-width: 150px;
     color: inherit;
     border: 1px solid $white;
-    background: none;
+    background: $white-translucent;
     padding: $space-xs $space-md;
     border-radius: 1.6rem;
     font-weight: $weight-semi-bold;
@@ -34,7 +34,7 @@
     justify-content: space-between;
     gap: $space-xs;
     cursor: pointer;
-    z-index: 10;
+    // z-index: 10;
   }
 
   >ul {
@@ -48,9 +48,10 @@
     list-style: none;
     border-radius: 1.6rem;
     border: 1px solid $white;
+    background: $white-translucent;
     display: none;
     flex-direction: column;
-    z-index: 2;
+    // z-index: 2;
 
     &.active {
       display: flex;
@@ -60,7 +61,7 @@
       padding: $space-xxs $space-xs;
       cursor: pointer;
 
-      &.selected,
+      &.highlight,
       &:hover {
         border-radius: 2.8rem;
         background-color: $primary;
@@ -94,7 +95,7 @@
 
       >li {
 
-        &.selected,
+        &.highlight,
         &:hover {
           background-color: $primary-light;
         }

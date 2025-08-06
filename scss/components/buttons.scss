@@ -1,7 +1,6 @@
 @use "../variables" as *;
 
 .btn {
-  align-self: center;
   display: inline-flex;
   font-size: 1.4rem;
   font-weight: $weight-semi-bold;
@@ -21,8 +20,6 @@
   &__icon {
     width: 2.4rem;
     height: 2.4rem;
-    fill: currentColor;
-    vertical-align: middle;
   }
 
   &--green {
@@ -30,7 +27,8 @@
     background-color: $primary;
 
     &:hover,
-    &:active {
+    &:active,
+    &:focus-visible {
       background-color: $primary-dark;
     }
   }
@@ -40,7 +38,8 @@
     background-color: $white;
 
     &:hover,
-    &:active {
+    &:active,
+    &:focus-visible {
       background-color: $primary-light;
     }
   }
