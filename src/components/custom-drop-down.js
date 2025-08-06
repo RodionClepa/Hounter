@@ -6,8 +6,9 @@ export class CustomDropdown {
     this.options = [...this.optionsContainer.querySelectorAll("li")];
     this.focusedOption = 0;
     this.selectedOption = -1;
-
     this.boundHandleOutsideClick = this.handleOutsideClick.bind(this);
+    this.zIndexOpenBtn = 20;
+    this.zIndexOpenList = 19;
 
     this.init();
   }
@@ -15,17 +16,30 @@ export class CustomDropdown {
   init() {
     this.button.addEventListener("click", () => this.toggle());
     this.button.addEventListener("keydown", (e) => this.handleKeyboard(e));
-    this.dropdownEl.addEventListener("click", (e) => this.handleOptionClick(e));
+    this.optionsContainer.addEventListener("click", (e) =>
+      this.handleOptionClick(e),
+    );
   }
 
   focusSelected() {
-    this.options[this.focusedOption].classList.add("selected");
+    this.options[this.focusedOption].classList.add("highlight");
+    this.button.setAttribute(
+      "aria-activedescendant",
+      this.options[this.focusedOption].id,
+    );
+  }
+
+  isOpen() {
+    return this.optionsContainer.classList.contains("active");
   }
 
   open() {
     this.optionsContainer.classList.add("active");
     this.focusedOption = this.selectedOption === -1 ? 0 : this.selectedOption;
+    this.button.setAttribute("aria-expanded", true);
     this.focusSelected();
+    this.button.style.zIndex = this.zIndexOpenBtn;
+    this.optionsContainer.style.zIndex = this.zIndexOpenList;
 
     document.addEventListener("click", this.boundHandleOutsideClick);
   }
@@ -34,13 +48,16 @@ export class CustomDropdown {
     this.optionsContainer.classList.remove("active");
     this.focusedOption = 0;
     this.clearFocus();
+    this.button.setAttribute("aria-expanded", false);
+    this.button.setAttribute("aria-activedescendant", "");
+    this.button.style.zIndex = "auto";
+    this.optionsContainer.style.zIndex = "auto";
 
     document.removeEventListener("click", this.boundHandleOutsideClick);
   }
 
   toggle() {
-    const isActive = this.optionsContainer.classList.contains("active");
-    isActive ? this.close() : this.open();
+    this.isOpen() ? this.close() : this.open();
   }
 
   handleOutsideClick(e) {
@@ -50,7 +67,7 @@ export class CustomDropdown {
   }
 
   clearFocus() {
-    this.options.forEach((el) => el.classList.remove("selected"));
+    this.options.forEach((el) => el.classList.remove("highlight"));
   }
 
   updateLabel(index) {
@@ -58,38 +75,45 @@ export class CustomDropdown {
       this.options[index].innerText;
   }
 
-  handleKeyboard(e) {
-    const key = e.code;
+  next() {
+    this.focusedOption = (this.focusedOption + 1) % this.options.length;
+    this.clearFocus();
+    this.focusSelected();
+  }
 
+  prev() {
+    this.focusedOption =
+      (this.focusedOption - 1 + this.options.length) % this.options.length;
+    this.clearFocus();
+    this.focusSelected();
+  }
+
+  closeSelect() {
+    this.selectOption(this.focusedOption);
+    this.close();
+  }
+
+  handleKeyboard(e) {
+    const openKeys = ["ArrowDown", "ArrowUp", "Enter", " "];
+    const { key, altKey } = e;
     if (key === "Tab") {
-      this.close();
       return;
     }
 
     e.preventDefault();
-
-    if (key === "Enter") {
-      this.toggle();
-      return;
+    if (!this.isOpen() && openKeys.includes(key)) {
+      return this.open();
     }
 
-    if (!this.optionsContainer.classList.contains("active")) return;
-
-    if (key === "ArrowDown") {
-      this.focusedOption = (this.focusedOption + 1) % this.options.length;
+    if ((key === "ArrowUp" && altKey) || key === "Escape") {
+      return this.close();
     } else if (key === "ArrowUp") {
-      this.focusedOption =
-        this.focusedOption === 0
-          ? this.options.length - 1
-          : this.focusedOption - 1;
-    } else if (key === "Space") {
-      this.selectOption(this.focusedOption);
-      this.close();
-      return;
+      return this.prev();
+    } else if (key === "ArrowDown") {
+      return this.next();
+    } else if (key === "Enter" || key === " ") {
+      return this.closeSelect();
     }
-
-    this.clearFocus();
-    this.focusSelected();
   }
 
   handleOptionClick(e) {
@@ -99,14 +123,18 @@ export class CustomDropdown {
     const index = this.options.findIndex(
       (el) => el.dataset.id === li.dataset.id,
     );
-    if (index === -1) return;
-
-    this.selectOption(index);
-    this.close();
+    if (index !== -1) {
+      this.selectOption(index);
+      this.close();
+    }
   }
 
   selectOption(index) {
     this.selectedOption = index;
+    this.options.forEach((optionEl) =>
+      optionEl.setAttribute("aria-selected", false),
+    );
+    this.options[this.selectedOption].setAttribute("aria-selected", true);
     this.updateLabel(index);
   }
 }

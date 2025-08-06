@@ -346,17 +346,128 @@
           </div>
           <div class="container-gray">
             <div class="custom-drop-down" id="more-articles-drop">
-              <button class="custom-drop">
-                <span> More Articles </span>
+              <button
+                class="custom-drop"
+                aria-haspopup="listbox"
+                aria-controls="more-articles-listbox"
+                aria-expanded="false"
+                aria-labelledby="more-articles-label"
+                aria-activedescendant=""
+                tabindex="0"
+              >
+                <span id="more-articles-label"> More Articles </span>
                 <svg>
                   <use xlink:href="img/icons/sprite.svg#arrow-down"></use>
                 </svg>
               </button>
-              <ul>
-                <li class="custom-option-drop" data-id="html">HTML</li>
-                <li class="custom-option-drop" data-id="css">CSS</li>
-                <li class="custom-option-drop" data-id="js">JavaScript</li>
-                <li class="custom-option-drop" data-id="react">React</li>
+              <ul
+                id="more-articles-listbox"
+                role="listbox"
+                aria-labelledby="more-articles-label"
+                tabindex="-1"
+              >
+                <li
+                  id="more-articles-option-html"
+                  class="custom-option-drop"
+                  role="option"
+                  aria-selected="false"
+                  option="option-html"
+                  data-id="html"
+                >
+                  HTML
+                </li>
+                <li
+                  id="more-articles-option-css"
+                  class="custom-option-drop"
+                  role="option"
+                  aria-selected="false"
+                  option="option-css"
+                  data-id="css"
+                >
+                  CSS
+                </li>
+                <li
+                  id="more-articles-option-js"
+                  class="custom-option-drop"
+                  role="option"
+                  aria-selected="false"
+                  option="option-js"
+                  data-id="js"
+                >
+                  JavaScript
+                </li>
+                <li
+                  id="more-articles-option-react"
+                  class="custom-option-drop"
+                  role="option"
+                  aria-selected="false"
+                  option="option-react"
+                  data-id="react"
+                >
+                  React
+                </li>
+              </ul>
+            </div>
+            <div class="custom-drop-down" id="more-art1">
+              <button
+                class="custom-drop"
+                aria-haspopup="listbox"
+                aria-controls="more-art1-listbox"
+                aria-expanded="false"
+                aria-labelledby="more-art1-label"
+                aria-activedescendant=""
+              >
+                <span id="more-art1-label"> More Articles </span>
+                <svg>
+                  <use xlink:href="img/icons/sprite.svg#arrow-down"></use>
+                </svg>
+              </button>
+              <ul
+                id="more-art1-listbox"
+                role="listbox"
+                aria-labelledby="more-art1-label"
+                tabindex="-1"
+              >
+                <li
+                  id="more-art1-option-html"
+                  class="custom-option-drop"
+                  role="option"
+                  aria-selected="false"
+                  option="option-html"
+                  data-id="html"
+                >
+                  HTML
+                </li>
+                <li
+                  id="more-art1-option-css"
+                  class="custom-option-drop"
+                  role="option"
+                  aria-selected="false"
+                  option="option-css"
+                  data-id="css"
+                >
+                  CSS
+                </li>
+                <li
+                  id="more-art1-option-js"
+                  class="custom-option-drop"
+                  role="option"
+                  aria-selected="false"
+                  option="option-js"
+                  data-id="js"
+                >
+                  JavaScript
+                </li>
+                <li
+                  id="more-art1-option-react"
+                  class="custom-option-drop"
+                  role="option"
+                  aria-selected="false"
+                  option="option-react"
+                  data-id="react"
+                >
+                  React
+                </li>
               </ul>
             </div>
           </div>
