@@ -1,11 +1,15 @@
 @use "../variables" as *;
 
+$card-width: 78rem;
+
 .reviews {
   margin-top: $space-xxl;
   display: flex;
   flex-direction: column;
   gap: $space-xl;
   align-items: center;
+  /*FOR SAFARI*/
+  overflow-x: hidden;
 
   &__header {
     text-align: center;
@@ -21,8 +25,8 @@
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    padding-inline-end: calc($horizontal-margin + 78rem - $space-xl * 2);
-    padding-inline-start: calc($horizontal-margin + 78rem - $space-xl * 2);
+    padding-inline-end: calc($horizontal-margin + $card-width/2 - $space-xl * 2);
+    padding-inline-start: calc($horizontal-margin + $card-width/2 - $space-xl * 2);
 
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -34,7 +38,7 @@
 
     &__item {
       position: relative;
-      width: 78rem;
+      width: $card-width;
       height: 50rem;
       flex-shrink: 0;
       transition: transform 1s;

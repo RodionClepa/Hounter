@@ -9,6 +9,87 @@ export class ReviewView extends View {
   constructor() {
     super();
     this.eventBus = new EventBus(this.eventTypes);
+    this._container.addEventListener("scroll", () => {
+      requestAnimationFrame(() => this._trackCenteredSlide());
+    });
+
+    window.addEventListener("resize", () => {
+      this._cacheSlideCenters();
+      this._trackCenteredSlide();
+    });
+
+    this._containerDots.addEventListener(
+      "click",
+      this._handleDotsClicks.bind(this),
+    );
+  }
+
+  render(data) {
+    if (!data || (Array.isArray(data) && data.length === 0))
+      return this.renderError();
+
+    this._data = data;
+    const markup = this._generateMarkup();
+
+    this._clear();
+    this._container.insertAdjacentHTML("afterbegin", markup);
+    this._cacheSlideCenters();
+    this._trackCenteredSlide();
+  }
+
+  _cacheSlideCenters() {
+    const slides = this._container.querySelectorAll(".slide-show__item");
+    this._slideCenters = Array.from(slides).map(
+      (slide) => slide.offsetLeft + slide.offsetWidth / 2,
+    );
+  }
+
+  _trackCenteredSlide() {
+    const containerCenter =
+      this._container.scrollLeft + this._container.offsetWidth / 2;
+
+    let closestIndex = 0;
+    let closestDistance = Infinity;
+
+    this._slideCenters.forEach((slideCenter, i) => {
+      const distance = Math.abs(slideCenter - containerCenter);
+
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestIndex = i;
+      }
+    });
+
+    if (this._currentSlide !== closestIndex) {
+      this._currentSlide = closestIndex;
+      this._updateActiveDot(closestIndex);
+    }
+  }
+
+  _updateActiveDot(index) {
+    const dots = this._containerDots.querySelectorAll(".dots__dot");
+    dots.forEach((dot) => dot.classList.remove("dots__dot--active"));
+    const activeDot = dots[index];
+    if (activeDot) {
+      activeDot.classList.add("dots__dot--active");
+    }
+  }
+
+  _handleDotsClicks(e) {
+    const clickedButton = e.target.closest("button");
+    if (!clickedButton || !this._containerDots.contains(clickedButton)) {
+      return;
+    }
+    const slideIndex = Number(clickedButton.dataset.slide);
+    const containerWidth = this._container.offsetWidth;
+    const targetCenter = this._slideCenters[slideIndex];
+    const scrollLeft = targetCenter - containerWidth / 2;
+
+    this._container.scrollTo({
+      left: scrollLeft,
+      behavior: "smooth",
+    });
+    this._currentSlide = slideIndex;
   }
 
   subscribe(eventType, listener) {
