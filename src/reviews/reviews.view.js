@@ -81,15 +81,20 @@ export class ReviewView extends View {
       return;
     }
     const slideIndex = Number(clickedButton.dataset.slide);
+    this.scrollToIndex(slideIndex);
+  }
+
+  scrollToIndex(index, behavior = "smooth") {
     const containerWidth = this._container.offsetWidth;
-    const targetCenter = this._slideCenters[slideIndex];
+    const targetCenter = this._slideCenters[index];
     const scrollLeft = targetCenter - containerWidth / 2;
 
     this._container.scrollTo({
       left: scrollLeft,
-      behavior: "smooth",
+      behavior: behavior,
     });
-    this._currentSlide = slideIndex;
+    this._currentSlide = index;
+    this._updateActiveDot(index);
   }
 
   subscribe(eventType, listener) {

@@ -24,7 +24,6 @@ $card-width: 78rem;
     max-width: min-content;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
     padding-inline-end: calc($horizontal-margin + $card-width/2 - $space-xl * 2);
     padding-inline-start: calc($horizontal-margin + $card-width/2 - $space-xl * 2);
 
