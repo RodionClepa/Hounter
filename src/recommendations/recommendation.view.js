@@ -83,7 +83,7 @@ export class RecommendationView extends View {
 
   _generateSlide(house) {
     return `
-      <div class="slider__item">
+      <button class="slider__item">
         <div class="slider__image-container">
           <img
             src="${house.image}"
@@ -109,7 +109,7 @@ export class RecommendationView extends View {
             <p class="grey-2">${house.owner.address}</p>
           </div>
         </div>
-      </div>
+      </button>
     `;
   }
 }
