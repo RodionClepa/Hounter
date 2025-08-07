@@ -38,6 +38,10 @@
     padding-inline-start: max($pad-regular, calc($horizontal-margin + $pad-regular ));
     padding-inline-end: 6rem;
 
+    // SAFARI FIX
+    width: 100vw;
+    max-width: min-content;
+
     &.drag {
       scroll-behavior: auto;
 
