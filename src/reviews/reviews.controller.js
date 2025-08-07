@@ -6,9 +6,10 @@ export class ReviewsController {
     this.model = new ReviewModel();
     this.view = new ReviewView();
 
-    this.model.subscribe(this.model.eventTypes.dataChange, (data) =>
-      this.view.render(data),
-    );
+    this.model.subscribe(this.model.eventTypes.dataChange, (data) => {
+      this.view.render(data);
+      this.view.scrollToIndex(Math.trunc(data.length / 2), "instant");
+    });
 
     this.model.fetchData().catch((err) => {
       console.error("Failed to load Reviews:", err);
