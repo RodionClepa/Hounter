@@ -1,4 +1,3 @@
-import { DEFAULT_RECOMMENDATION } from "../config.js";
 import { EventBus } from "../EventBus.js";
 import { labelView } from "../services/label-view.service.js";
 import { View } from "../View.js";

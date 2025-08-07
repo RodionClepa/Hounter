@@ -4,6 +4,10 @@ export class EventBus {
     this.eventTypes = { ...eventTypes };
   }
 
+  updateEventTypes(eventTypes) {
+    this.eventTypes = { ...eventTypes };
+  }
+
   subscribe(eventType, listener) {
     if (!this._listeners[eventType]) {
       this._listeners[eventType] = [];

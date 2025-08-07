@@ -1,8 +1,5 @@
 import { draggableSlider } from "../components/draggable-slider.js";
-import {
-  DEFAULT_RECOMMENDATION,
-  DELAY_UPDATE_SLIDER_BUTTONS,
-} from "../config.js";
+import { DELAY_UPDATE_SLIDER_BUTTONS } from "../config.js";
 import { RecommendationModel } from "./recommendaiton.model.js";
 import { RecommendationView } from "./recommendation.view.js";
 import { debounce } from "../utility/debounce.js";
