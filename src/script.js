@@ -1,4 +1,5 @@
 import { RecommendationController } from "./recommendations/recommendation.controller.js";
+import { ReviewsController } from "./reviews/reviews.controller.js";
 
 const cloneCarouselContent = function (nodeRef, parentNode) {
   var copy = document.querySelector(nodeRef).cloneNode(true);
@@ -14,6 +15,7 @@ const init = function () {
   cloneCarouselContent(".hero__stat-list", ".stat-carousel");
 
   const recommendationController = new RecommendationController();
+  const reviewsController = new ReviewsController();
 };
 
 init();

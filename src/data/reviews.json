@@ -1,0 +1,35 @@
+[
+  {
+    "image": "img/images/review-1.png",
+    "title": "Best! I Got The House u wanted Through Hounter",
+    "text": "Through this website I can get a house with the type and specifications I want very easily, without a complicated process to be able to find information on the house we want.",
+    "user": {
+      "name": "Dianne Russell",
+      "location": "Manchester, Kentucky",
+      "avatar": "img/assets/avatar-10.jpg"
+    },
+    "rating": 4.6
+  },
+  {
+    "image": "img/images/review-2.png",
+    "title": "Great experience, smooth process!",
+    "text": "Everything went as expected. I found my dream home in just a few clicks. Highly recommended!",
+    "user": {
+      "name": "Courtney Henry",
+      "location": "Springfield, Illinois",
+      "avatar": "img/assets/avatar-5.jpg"
+    },
+    "rating": 4.8
+  },
+  {
+    "image": "img/images/review-3.png",
+    "title": "Simple and effective platform",
+    "text": "I didn't think buying a house could be this easy. The interface is intuitive and very helpful.",
+    "user": {
+      "name": "Ronald Richards",
+      "location": "Austin, Texas",
+      "avatar": "img/assets/avatar-4.jpg"
+    },
+    "rating": 4.7
+  }
+]

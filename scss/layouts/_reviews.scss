@@ -4,8 +4,8 @@
   margin-top: $space-xxl;
   display: flex;
   flex-direction: column;
+  gap: $space-xl;
   align-items: center;
-  overflow-x: hidden;
 
   &__header {
     text-align: center;
@@ -21,8 +21,16 @@
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    padding-inline-end: 78rem;
-    padding-inline-start: 78rem;
+    padding-inline-end: calc($horizontal-margin + 78rem - $space-xl * 2);
+    padding-inline-start: calc($horizontal-margin + 78rem - $space-xl * 2);
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
 
     &__item {
       position: relative;
@@ -92,6 +100,25 @@
         height: 2.4rem;
         color: $secondary;
       }
+    }
+  }
+}
+
+.dots {
+  display: flex;
+  gap: $space-sm;
+
+  &__dot {
+    border: none;
+    background-color: $grey-1;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.5s;
+
+    &--active {
+      background-color: $grey-3;
     }
   }
 }
