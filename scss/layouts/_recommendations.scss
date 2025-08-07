@@ -57,6 +57,9 @@
     flex-direction: column;
     gap: $space-lg;
     cursor: pointer;
+    background: none;
+    border: none;
+    font-family: inherit;
 
     &--hidden {
       visibility: hidden;
@@ -66,8 +69,8 @@
       display: flex;
       flex-direction: column;
       gap: $space-xs;
+      align-items: flex-start;
     }
-
   }
 
   &__image-container {
