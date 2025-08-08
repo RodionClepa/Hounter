@@ -1,0 +1,74 @@
+[
+  {
+    "id": 0,
+    "image": "img/images/house-image1.png",
+    "author": {
+      "name": "Dianne Russell",
+      "avatar": "img/assets/avatar-10.jpg"
+    },
+    "title": "The things we need to check when we want to buy a house",
+    "readTime": "4",
+    "date": "2021-04-25",
+    "text": "Buying a house is a big step. Here are the key factors you should always check before making a purchase decision."
+  },
+  {
+    "id": 1,
+    "image": "img/images/house-image1.png",
+    "author": {
+      "name": "Cameron Williamson",
+      "avatar": "img/assets/avatar-10.jpg"
+    },
+    "title": "Top 5 interior design tips for modern homes",
+    "readTime": "3",
+    "date": "2021-05-10",
+    "text": "Modern interior design can make your space both stylish and functional. Discover five easy tips to upgrade your home."
+  },
+  {
+    "id": 2,
+    "image": "img/images/house-image1.png",
+    "author": {
+      "name": "Kristin Watson",
+      "avatar": "img/assets/avatar-10.jpg"
+    },
+    "title": "How to invest smartly in real estate",
+    "readTime": "5",
+    "date": "2021-06-15",
+    "text": "Real estate can be a lucrative investment if done wisely. Learn the fundamentals before diving in."
+  },
+  {
+    "id": 3,
+    "image": "img/images/house-image1.png",
+    "author": {
+      "name": "Esther Howard",
+      "avatar": "img/assets/avatar-10.jpg"
+    },
+    "title": "Mistakes first-time home buyers make",
+    "readTime": "6",
+    "date": "2021-07-30",
+    "text": "Many new home buyers fall into common traps. Avoid these mistakes to make your purchase stress-free."
+  },
+  {
+    "id": 4,
+    "image": "img/images/house-image1.png",
+    "author": {
+      "name": "Marvin McKinney",
+      "avatar": "img/assets/avatar-10.jpg"
+    },
+    "title": "Understanding mortgage basics in 2021",
+    "readTime": "4",
+    "date": "2021-08-12",
+    "text": "Mortgages can be confusing. This article breaks down the basics to help you get started with confidence."
+  },
+  {
+    "id": 5,
+    "image": "img/images/house-image1.png",
+    "author": {
+      "name": "Savannah Nguyen",
+      "avatar": "img/assets/avatar-10.jpg"
+    },
+    "title": "Is it better to rent or buy a house in 2021?",
+    "readTime": "7",
+    "date": "2021-09-05",
+    "text": "Deciding between renting and buying? We explore the pros and cons to help you choose what fits best."
+  }
+]
