@@ -1,3 +1,4 @@
+import { ArticlesController } from "./articles/articles.controller.js";
 import { RecommendationController } from "./recommendations/recommendation.controller.js";
 import { ReviewsController } from "./reviews/reviews.controller.js";
 
@@ -16,6 +17,7 @@ const init = function () {
 
   const recommendationController = new RecommendationController();
   const reviewsController = new ReviewsController();
+  const articlesController = new ArticlesController();
 };
 
 init();
