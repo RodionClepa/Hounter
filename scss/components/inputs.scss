@@ -97,12 +97,12 @@
 }
 
 .form-checkbox {
-  position: relative;
   display: inline-flex;
   align-items: center;
   position: relative;
   padding-left: 3.6rem;
   color: $grey-3;
+  cursor: pointer;
 
   &__input {
     position: absolute;
@@ -110,6 +110,11 @@
     height: 0;
     width: 0;
     opacity: 0;
+
+    &:focus-visible+.form-checkbox__checkmark {
+      outline: 2px solid $primary;
+      outline-offset: 2px;
+    }
   }
 
   &__checkmark {
