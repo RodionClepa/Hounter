@@ -36,6 +36,7 @@ export class ArticlesView extends View {
 
       item.classList.add("blogs__item--invisible");
       this._container.appendChild(item);
+      this._container.scrollIntoView({ behavior: "smooth" });
 
       await new Promise(requestAnimationFrame);
 
