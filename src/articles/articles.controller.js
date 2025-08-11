@@ -1,3 +1,4 @@
+import { ArticlePreviewView } from "./articlePreview.view.js";
 import { ArticlesModel } from "./articles.model.js";
 import { ArticlesView } from "./articles.view.js";
 
@@ -6,10 +7,13 @@ export class ArticlesController {
   constructor() {
     this.model = new ArticlesModel();
     this.view = new ArticlesView();
+    this.preview = new ArticlePreviewView();
 
     this.model.subscribe(this.model.eventTypes.dataChange, (data) => {
       this.data = data;
       this.view.render(this.data.slice(0, 3));
+      console.log(this.data[0]);
+      this.preview.render(this.data[0]);
     });
 
     this.view.subscribe(this.view.eventTypes.moreArticlesPressed, () => {
@@ -17,7 +21,7 @@ export class ArticlesController {
     });
 
     this.view.subscribe(this.view.eventTypes.articleClicked, (id) => {
-      console.log(parseInt(id));
+      this.preview.update(this.data[parseInt(id)]);
     });
 
     this.model.fetchData().catch((err) => {

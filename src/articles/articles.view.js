@@ -56,8 +56,6 @@ export class ArticlesView extends View {
     this.eventBus.notify(this.eventTypes.articleClicked, id);
   }
 
-  renderSelected(data) {}
-
   _generateMarkup() {
     return this._data.map((article) => this._generateItem(article)).join("");
   }
