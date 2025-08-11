@@ -4,6 +4,7 @@ import { ArticlesView } from "./articles.view.js";
 
 export class ArticlesController {
   data = [];
+  _moreArticlesPressed = false;
   constructor() {
     this.model = new ArticlesModel();
     this.view = new ArticlesView();
@@ -17,6 +18,10 @@ export class ArticlesController {
     });
 
     this.view.subscribe(this.view.eventTypes.moreArticlesPressed, () => {
+      if (this._moreArticlesPressed) {
+        return;
+      }
+      this._moreArticlesPressed = true;
       this.view.appendEnd(this.data.slice(3));
     });
 
