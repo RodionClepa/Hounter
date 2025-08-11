@@ -19,6 +19,7 @@ export class CustomDropdown {
     this.optionsContainer.addEventListener("click", (e) =>
       this.handleOptionClick(e),
     );
+    this.button.addEventListener("focusout", () => this.close());
   }
 
   focusSelected() {
@@ -101,6 +102,7 @@ export class CustomDropdown {
     }
 
     e.preventDefault();
+    console.log("alo");
     if (!this.isOpen() && openKeys.includes(key)) {
       return this.open();
     }
