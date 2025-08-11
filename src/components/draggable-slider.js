@@ -68,12 +68,21 @@ export class DraggableSlider {
   }
 
   _getMaxScrollLeft() {
-    return this._slider.scrollWidth - this._slider.clientWidth;
+    return (
+      this._slider.scrollWidth -
+      this._slider.clientWidth -
+      this._getPaddingStart() -
+      this._getPaddingEnd()
+    );
   }
 
   _getMaxVisibleCards() {
     return Math.trunc(
-      this._slider.clientWidth / (this._cardWidth + this._spaceBetween),
+      (this._slider.clientWidth -
+        this._getPaddingStart() -
+        this._getPaddingEnd() +
+        this._spaceBetween) /
+        (this._cardWidth + this._spaceBetween),
     );
   }
 
@@ -86,37 +95,30 @@ export class DraggableSlider {
   }
 
   isEnd() {
-    return (
-      this._slider.scrollLeft > this._getMaxScrollLeft() - this._getPaddingEnd()
-    );
+    const items = this._slider.querySelectorAll(this._itemClass);
+    if (!items.length) {
+      return true;
+    }
+
+    const lastCard = items[items.length - 1];
+    const lastCardRight = lastCard.offsetLeft + lastCard.offsetWidth;
+    const sliderVisibleRight =
+      this._slider.scrollLeft + this._slider.clientWidth;
+
+    return lastCardRight <= sliderVisibleRight;
   }
 
   isStart() {
-    console.log(
-      `${this._slider.scrollLeft} < ${this._getPaddingStart()} + ${this._cardWidth / 3}`,
-    );
     return this._slider.scrollLeft < this._cardWidth / 2;
   }
 
   _moveToSnappedPosition() {
-    let snappedPosition;
     this._updateCurrentCard();
-
-    if (this.isEnd()) {
-      snappedPosition = this._getMaxScrollLeft();
-    } else if (this.isStart()) {
-      snappedPosition = 0;
-    } else {
-      snappedPosition = this._getSnappedPosition();
-    }
-
-    this._smoothScroll(snappedPosition);
+    this._smoothScroll(this._getSnappedPosition());
   }
 
   scrollNext() {
-    console.log(this._currentCard);
     this._currentCard = Math.min(this._currentCard + 1, this._countItems() - 1);
-    console.log(this._currentCard);
     this._smoothScroll(this._getSnappedPosition());
   }
 
@@ -157,7 +159,6 @@ export class DraggableSlider {
     clearTimeout(this._scrollTimeout);
 
     this._scrollTimeout = setTimeout(() => {
-      this._updateCurrentCard();
       this._moveToSnappedPosition();
       this._scrollTimeout = null;
     }, 100);
@@ -168,20 +169,13 @@ export class DraggableSlider {
   }
 
   _updateCurrentCard() {
-    console.log("_updateCurrentCard");
-    if (this.isStart()) {
-      this._currentCard = 0;
-      console.log("isStart");
-    } else if (this.isEnd()) {
-      console.log(`${this._countItems()} - ${this._getMaxVisibleCards()}`);
+    if (this.isEnd()) {
       this._currentCard = this._countItems() - this._getMaxVisibleCards();
-      console.log("isEnd");
     } else {
-      const offset = this._slider.scrollLeft;
       const totalCardWidth = this._cardWidth + this._spaceBetween;
-      this._currentCard = Math.round(Math.abs(offset) / totalCardWidth);
+      const offset = this._slider.scrollLeft + this._spaceBetween;
+      this._currentCard = Math.round(offset / totalCardWidth);
     }
-    console.log(this._currentCard);
 
     this.eventBus.notify(this.eventTypes.currentCardUpdated);
   }
