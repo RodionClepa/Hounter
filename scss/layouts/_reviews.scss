@@ -27,14 +27,6 @@ $card-width: 78rem;
     padding-inline-end: calc($horizontal-margin + $card-width/2 - $space-xl * 2);
     padding-inline-start: calc($horizontal-margin + $card-width/2 - $space-xl * 2);
 
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
-
     &__item {
       position: relative;
       width: $card-width;
