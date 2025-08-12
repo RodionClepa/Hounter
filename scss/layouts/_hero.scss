@@ -20,7 +20,7 @@
   }
 
   &__image-container {
-    background-image: url("../../img/images/hero-image.png");
+    background-image: url("#{$img-path}/images/hero-image.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

@@ -1,0 +1,28 @@
+@use "../variables" as *;
+
+.subscribe {
+  &__wrapper {
+    margin-top: $space-xl;
+    display: flex;
+    gap: $space-xxl;
+    align-items: center;
+    background-image: url("#{$img-path}images/sub-bg.png");
+    background-size: cover;
+    border-radius: 3.2rem;
+    padding: $space-xl;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: $space-xl;
+  }
+
+  &__title {
+    text-align: center;
+  }
+}
+
+#subscribe__icon {
+  color: $info;
+}
