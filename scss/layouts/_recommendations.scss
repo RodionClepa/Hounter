@@ -36,7 +36,7 @@
     margin-top: $space-xl;
     scroll-behavior: smooth;
     padding-inline-start: max($pad-regular, calc($horizontal-margin + $pad-regular ));
-    padding-inline-end: 6rem;
+    padding-inline-end: max($pad-regular, calc($horizontal-margin + $pad-regular ));
 
     // SAFARI FIX
     width: 100vw;

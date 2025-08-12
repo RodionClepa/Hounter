@@ -103,7 +103,9 @@ export class DraggableSlider {
     const lastCard = items[items.length - 1];
     const lastCardRight = lastCard.offsetLeft + lastCard.offsetWidth;
     const sliderVisibleRight =
-      this._slider.scrollLeft + this._slider.clientWidth;
+      this._slider.scrollLeft +
+      this._slider.clientWidth -
+      this._getPaddingEnd();
 
     return lastCardRight <= sliderVisibleRight;
   }
