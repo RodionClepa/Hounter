@@ -456,6 +456,150 @@
           </div>
         </div>
       </section>
+      <section class="join section-center section-max-width p-right p-left">
+        <div class="join__info-container">
+          <h3 class="h-3">Would You Like To Join?</h3>
+          <p class="grey-3">
+            Quickly get three quotes from these local that people love in online
+            reviews.
+          </p>
+          <div class="join__line"></div>
+          <p class="grey-3">Pick the whose estimate suits you best.</p>
+          <div class="join__line"></div>
+          <p class="grey-3">
+            We then make sure the work i done to your complete satisfaction.
+          </p>
+          <img
+            src="img/images/join-image.png"
+            alt="Join Image"
+            class="join__image"
+          />
+        </div>
+        <form action="#" class="join__form">
+          <div class="form__field">
+            <label class="form__label label-md" for="name">Name</label>
+            <div class="form-input">
+              <input
+                class="form-input__field"
+                id="name"
+                placeholder="Your name here"
+                autocomplete="name"
+              />
+              <span class="form-input__error">Filed erorr. Please fix it</span>
+            </div>
+          </div>
+          <div class="form__field">
+            <label class="form__label label-md" for="surname">Surname</label>
+            <div class="form-input">
+              <input
+                class="form-input__field"
+                id="surname"
+                placeholder="Your surname here"
+                autocomplete="surname"
+              />
+              <span class="form-input__error">Filed erorr. Please fix it</span>
+            </div>
+          </div>
+          <div class="form__field">
+            <label class="form__label label-md" for="education-drop"
+              >Education</label
+            >
+            <div
+              class="custom-drop-down custom-drop-down--white"
+              id="education-drop"
+            >
+              <button
+                class="custom-drop"
+                aria-haspopup="listbox"
+                aria-controls="education-listbox"
+                aria-expanded="false"
+                aria-labelledby="education-label"
+                aria-activedescendant=""
+                tabindex="0"
+                type="button"
+              >
+                <span id="education-label"> More Articles </span>
+                <svg>
+                  <use xlink:href="img/icons/sprite.svg#arrow-down"></use>
+                </svg>
+              </button>
+              <ul
+                id="education-listbox"
+                role="listbox"
+                aria-labelledby="education-label"
+                tabindex="-1"
+              >
+                <li
+                  id="education-option-html"
+                  class="custom-option-drop"
+                  role="option"
+                  aria-selected="false"
+                  option="option-html"
+                  data-id="html"
+                >
+                  HTML
+                </li>
+                <li
+                  id="education-option-css"
+                  class="custom-option-drop"
+                  role="option"
+                  aria-selected="false"
+                  option="option-css"
+                  data-id="css"
+                >
+                  CSS
+                </li>
+                <li
+                  id="education-option-js"
+                  class="custom-option-drop"
+                  role="option"
+                  aria-selected="false"
+                  option="option-js"
+                  data-id="js"
+                >
+                  JavaScript
+                </li>
+                <li
+                  id="education-option-react"
+                  class="custom-option-drop"
+                  role="option"
+                  aria-selected="false"
+                  option="option-react"
+                  data-id="react"
+                >
+                  React
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="form__field">
+            <label class="form__label label-md" for="message">Message</label>
+            <div class="form-input form-input--textarea">
+              <div class="form-input__wrapper">
+                <textarea
+                  class="form-input__field"
+                  id="message"
+                  placeholder="Textarea"
+                  maxlength="500"
+                ></textarea>
+                <span class="form-input__count">0/500</span>
+              </div>
+            </div>
+          </div>
+          <label class="form-checkbox" for="consent">
+            <input
+              type="checkbox"
+              name="consent"
+              id="consent"
+              class="form-checkbox__input"
+            />
+            <span class="form-checkbox__checkmark"></span>
+            I give consent to the processing of my personal data given in the
+            contact form above under the terms and conditions of Grid Dynamics
+            Privacy Policy.
+          </label>
+        </form>
+      </section>
     </main>
   </body>
 </html>
