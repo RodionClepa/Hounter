@@ -1,10 +1,17 @@
 @use "../variables" as *;
 
 .footer {
-  margin-top: $space-xxl;
-  display: flex;
-  justify-content: space-between;
   padding-bottom: $pad-regular;
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  &__wrapper {
+    margin-top: $space-xxl;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
 
   &__left {
     width: 37.6rem;
@@ -45,6 +52,11 @@
         color: $grey-2;
       }
     }
+  }
 
+  &__blur {
+    position: absolute;
+    right: 0;
+    bottom: 0;
   }
 }
