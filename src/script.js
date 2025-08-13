@@ -26,6 +26,10 @@ const init = function () {
     document.querySelector("#education-drop"),
   );
 
+  const propertyDropdown = new CustomDropdown(
+    document.querySelector("#property-drop"),
+  );
+
   initCharCounters();
   initButtonCookie();
 };
