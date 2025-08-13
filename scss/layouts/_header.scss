@@ -4,15 +4,32 @@
   position: absolute;
   display: flex;
   justify-content: space-between;
-  background-color: $grey-1;
   width: 100%;
   z-index: $z-index-header;
+  padding: $space-lg;
+
+  &__blur {
+    position: absolute;
+  }
 }
 
 .navigation {
   &__list {
     list-style: none;
     display: flex;
+    align-items: center;
     gap: $space-lg;
+  }
+
+  &__link {
+    text-decoration: none;
+    border: 1px solid $white;
+    padding: 0.8rem 1.6rem;
+    border-radius: 1.6rem;
+    color: $white;
+    font-weight: $weight-semi-bold;
+    letter-spacing: 0;
+    font-size: 1.4rem;
+    width: fit-content;
   }
 }
