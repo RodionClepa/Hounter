@@ -3,6 +3,7 @@ import { RecommendationController } from "./recommendations/recommendation.contr
 import { ReviewsController } from "./reviews/reviews.controller.js";
 import { CustomDropdown } from "./components/custom-drop-down.js";
 import { initCharCounters } from "./components/textarea_count.js";
+import { initButtonCookie } from "./components/cookie.js";
 
 const cloneCarouselContent = function (nodeRef, parentNode) {
   var copy = document.querySelector(nodeRef).cloneNode(true);
@@ -26,6 +27,7 @@ const init = function () {
   );
 
   initCharCounters();
+  initButtonCookie();
 };
 
 init();
