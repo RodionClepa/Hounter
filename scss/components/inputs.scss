@@ -92,6 +92,9 @@
       padding-bottom: 3.2rem;
       resize: vertical;
       min-height: 10rem;
+      white-space: pre-wrap;
+      overflow-wrap: break-word;
+      overflow-y: auto;
     }
 
     .form-input__count {

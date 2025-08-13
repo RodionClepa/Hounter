@@ -2,6 +2,7 @@ import { ArticlesController } from "./articles/articles.controller.js";
 import { RecommendationController } from "./recommendations/recommendation.controller.js";
 import { ReviewsController } from "./reviews/reviews.controller.js";
 import { CustomDropdown } from "./components/custom-drop-down.js";
+import { initCharCounters } from "./components/textarea_count.js";
 
 const cloneCarouselContent = function (nodeRef, parentNode) {
   var copy = document.querySelector(nodeRef).cloneNode(true);
@@ -23,6 +24,8 @@ const init = function () {
   const educationDropdown = new CustomDropdown(
     document.querySelector("#education-drop"),
   );
+
+  initCharCounters();
 };
 
 init();
