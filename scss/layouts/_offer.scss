@@ -24,7 +24,6 @@
         color: $grey-3;
         column-gap: $space-xl;
         row-gap: $space-md;
-
         padding-bottom: $space-xl;
         border-bottom: 2px solid $grey-1;
       }
@@ -70,12 +69,10 @@
 
       &__button {
         all: unset;
-
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-
         cursor: pointer;
         display: flex;
       }
