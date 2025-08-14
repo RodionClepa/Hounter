@@ -19,7 +19,6 @@
     gap: $space-lg;
   }
 
-
   &__image-container {
     background-image: url("../../img/images/hero-image.png");
     background-size: cover;
@@ -28,7 +27,6 @@
     min-height: 720px;
     width: 100%;
     border-radius: 0 0 0 8rem;
-
     padding: $space-xxl 0 8rem 0;
     display: flex;
     align-items: flex-end;
