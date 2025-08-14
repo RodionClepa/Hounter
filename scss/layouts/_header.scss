@@ -30,5 +30,11 @@
     letter-spacing: 0;
     font-size: 1.4rem;
     width: fit-content;
+
+    &:active,
+    &:hover,
+    &:focus-visible {
+      background: $white-translucent;
+    }
   }
 }
