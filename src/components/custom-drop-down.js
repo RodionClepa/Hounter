@@ -14,12 +14,19 @@ export class CustomDropdown {
   }
 
   init() {
-    this.button.addEventListener("click", () => this.toggle());
-    this.button.addEventListener("keydown", (e) => this.handleKeyboard(e));
     this.optionsContainer.addEventListener("click", (e) =>
       this.handleOptionClick(e),
     );
-    this.button.addEventListener("focusout", () => this.close());
+    this.button.addEventListener("click", () => this.toggle());
+    this.button.addEventListener("keydown", (e) => this.handleKeyboard(e));
+    this.dropdownEl.addEventListener("focusout", (e) => this.handleFocusOut(e));
+  }
+
+  handleFocusOut(e) {
+    const relatedTarget = e.relatedTarget;
+    if (!this.dropdownEl.contains(relatedTarget)) {
+      this.close();
+    }
   }
 
   focusSelected() {
@@ -62,6 +69,7 @@ export class CustomDropdown {
   }
 
   handleOutsideClick(e) {
+    console.log("handleOutsideClick");
     if (!this.dropdownEl.contains(e.target)) {
       this.close();
     }
@@ -119,6 +127,7 @@ export class CustomDropdown {
   }
 
   handleOptionClick(e) {
+    console.log("handleOptionClick");
     const li = e.target.closest("li");
     if (!li || !this.dropdownEl.contains(li)) return;
 
