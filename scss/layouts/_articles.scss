@@ -94,6 +94,7 @@
     width: 100%;
     height: 24rem;
     border-radius: 1.6rem;
+    object-fit: cover;
   }
 
   &__info {
@@ -101,7 +102,6 @@
     flex-direction: column;
     gap: $space-xs;
   }
-
 
   &__time {
     display: flex;
