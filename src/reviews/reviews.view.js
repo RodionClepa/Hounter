@@ -1,14 +1,11 @@
-import { EventBus } from "../EventBus.js";
 import { View } from "../View.js";
 
 export class ReviewView extends View {
   _container = document.getElementById("slide-show");
   _containerDots = document.getElementById("review-dots");
-  eventTypes = {};
 
   constructor() {
     super();
-    this.eventBus = new EventBus(this.eventTypes);
     this._container.addEventListener("scroll", () => {
       requestAnimationFrame(() => this._trackCenteredSlide());
     });
