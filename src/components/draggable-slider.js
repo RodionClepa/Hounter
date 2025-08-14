@@ -27,20 +27,28 @@ export class DraggableSlider {
     this._spaceBetween = parseInt(this._style.gap) || 0;
     this._currentCard = 0;
 
+    this._DELAYSCROLL = 500;
+    this._scrollTimeout = null;
+
+    this._bindHandlers();
+    this._setupEventListeners();
+
+    this.eventBus = new EventBus(this.eventTypes);
+  }
+
+  _bindHandlers() {
     this._startHandler = this._start.bind(this);
     this._dragHandler = this._drag.bind(this);
     this._stopHandler = this._stop.bind(this);
     this._onScrollHandler = this._onScroll.bind(this);
-    this._scrollTimeout = null;
+  }
 
+  _setupEventListeners() {
     this._slider.addEventListener("mousedown", this._startHandler);
     this._slider.addEventListener("mousemove", this._dragHandler);
     this._slider.addEventListener("mouseup", this._stopHandler);
     this._slider.addEventListener("mouseleave", this._stopHandler);
     this._slider.addEventListener("scroll", this._onScrollHandler);
-    this._DELAYSCROLL = 500;
-
-    this.eventBus = new EventBus(this.eventTypes);
   }
 
   _start(event) {
