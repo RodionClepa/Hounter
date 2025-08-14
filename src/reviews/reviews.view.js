@@ -25,8 +25,9 @@ export class ReviewView extends View {
   }
 
   render(data) {
-    if (!data || (Array.isArray(data) && data.length === 0))
+    if (!data || (Array.isArray(data) && data.length === 0)) {
       return this.renderError();
+    }
 
     this._data = data;
     const markup = this._generateMarkup();
@@ -95,10 +96,6 @@ export class ReviewView extends View {
     });
     this._currentSlide = index;
     this._updateActiveDot(index);
-  }
-
-  subscribe(eventType, listener) {
-    this.eventBus.subscribe(eventType, listener);
   }
 
   _generateDots(quantity) {
