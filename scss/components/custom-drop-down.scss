@@ -34,7 +34,6 @@
     justify-content: space-between;
     gap: $space-xs;
     cursor: pointer;
-    // z-index: 10;
   }
 
   >ul {
@@ -51,14 +50,15 @@
     background: $white-translucent;
     display: none;
     flex-direction: column;
-    // z-index: 2;
+    gap: $space-xs;
 
     &.active {
       display: flex;
     }
 
     >li {
-      padding: $space-xxs $space-xs;
+      padding: $space-xs;
+      line-height: 2.4rem;
       cursor: pointer;
 
       &.highlight,
