@@ -27,7 +27,9 @@ export class RecommendationView extends View {
   _handleFilterButtonClicks(e) {
     const clickedButton = e.target.closest("button");
 
-    if (!clickedButton || !this._filterControl.contains(clickedButton)) return;
+    if (!clickedButton || !this._filterControl.contains(clickedButton)) {
+      return;
+    }
 
     const allButtons = this._filterControl.querySelectorAll("button");
     allButtons.forEach((btn) => btn.classList.remove("btn--active"));
@@ -44,7 +46,9 @@ export class RecommendationView extends View {
   _handleSliderButtonClicks(e) {
     const clickedButton = e.target.closest("button");
 
-    if (!clickedButton || !this._sliderControl.contains(clickedButton)) return;
+    if (!clickedButton || !this._sliderControl.contains(clickedButton)) {
+      return;
+    }
     const type = clickedButton.dataset.type;
     this.eventBus.notify(this.eventTypes.sliderNavigate, type);
   }
