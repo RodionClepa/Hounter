@@ -13,7 +13,6 @@ export class ArticlesController {
     this.model.subscribe(this.model.eventTypes.dataChange, (data) => {
       this.data = data;
       this.view.render(this.data.slice(0, 3));
-      console.log(this.data[0]);
       this.preview.render(this.data[0]);
     });
 

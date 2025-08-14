@@ -69,7 +69,6 @@ export class CustomDropdown {
   }
 
   handleOutsideClick(e) {
-    console.log("handleOutsideClick");
     if (!this.dropdownEl.contains(e.target)) {
       this.close();
     }

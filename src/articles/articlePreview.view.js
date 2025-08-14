@@ -1,17 +1,10 @@
-import { EventBus } from "../EventBus.js";
 import { View } from "../View.js";
 
 export class ArticlePreviewView extends View {
   _container = document.getElementById("blog__preview");
-  eventTypes = {};
 
   constructor() {
     super();
-    this.eventBus = new EventBus(this.eventTypes);
-  }
-
-  subscribe(eventType, listener) {
-    this.eventBus.subscribe(eventType, listener);
   }
 
   update(data) {
@@ -40,7 +33,6 @@ export class ArticlePreviewView extends View {
   }
 
   _generateMarkup() {
-    console.log(this._data);
     return `
       <img
         src="${this._data.image}"
