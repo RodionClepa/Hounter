@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link href="css/main.css" rel="stylesheet" />
+    <link
+      rel="preload"
+      href="/fonts/Lexend-Black.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/Lexend-Light.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/Lexend-Medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/Lexend-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/Lexend-SemiBold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <script type="module" defer src="src/uikit.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="kit-block">
+        <div class="kit-block__title">
+          <h2 class="h-2">Typography</h2>
+          <p>Lexend</p>
+        </div>
+        <table class="kit-table">
+          <thead>
+            <tr>
+              <th>Heading</th>
+              <th>Size Desktop/Mobile</th>
+              <th>Leading Desktop/Mobile</th>
+              <th>Weight</th>
+              <th>Spacing</th>
+              <th>Case</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <h1 class="h-1">Heading 1</h1>
+              </td>
+              <td>40px</td>
+              <td>Auto</td>
+              <td>Black</td>
+              <td>-</td>
+              <td>TitleCase</td>
+            </tr>
+            <tr>
+              <td>
+                <h2 class="h-2">Heading 2</h2>
+              </td>
+              <td>32px</td>
+              <td>Auto</td>
+              <td>SemiBold</td>
+              <td>-</td>
+              <td>TitleCase</td>
+            </tr>
+            <tr>
+              <td>
+                <h3 class="h-3">Heading 3</h3>
+              </td>
+              <td>24px</td>
+              <td>Auto</td>
+              <td>Medium</td>
+              <td>-</td>
+              <td>TitleCase</td>
+            </tr>
+            <tr>
+              <td>
+                <h4 class="h-4">Heading 4</h4>
+              </td>
+              <td>20px</td>
+              <td>Auto</td>
+              <td>SemiBold</td>
+              <td>-</td>
+              <td>TitleCase</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="kit-table">
+          <thead>
+            <tr>
+              <th>Subtitle</th>
+              <th>Size</th>
+              <th>Leading</th>
+              <th>Weight</th>
+              <th>Spacing</th>
+              <th>Case</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <p class="subtitle">Subtitle</p>
+              </td>
+              <td>18px</td>
+              <td>Auto</td>
+              <td>Medium</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="kit-table">
+          <thead>
+            <tr>
+              <th>Body</th>
+              <th>Size</th>
+              <th>Leading</th>
+              <th>Weight</th>
+              <th>Spacing</th>
+              <th>Case</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <p>body style text</p>
+              </td>
+              <td>16px</td>
+              <td>24px</td>
+              <td>Light</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>
+                <p class="medium-text">body style Medium text</p>
+              </td>
+              <td>16px</td>
+              <td>Auto</td>
+              <td>Medium</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>
+                <p class="semi-bold-text">body style SemiBold text</p>
+              </td>
+              <td>16px</td>
+              <td>Auto</td>
+              <td>SemiBold</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="kit-table">
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>Size</th>
+              <th>Leading</th>
+              <th>Weight</th>
+              <th>Spacing</th>
+              <th>Case</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <p class="label">label style text</p>
+              </td>
+              <td>16px</td>
+              <td>24px</td>
+              <td>Light</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>
+                <p class="label-sm">label style Small Text</p>
+              </td>
+              <td>12px</td>
+              <td>Auto</td>
+              <td>Regular</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>
+                <p class="label-md">label style Medium text</p>
+              </td>
+              <td>14px</td>
+              <td>Auto</td>
+              <td>Medium</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>
+                <p class="label-semi-bold">label style SemiBold text</p>
+              </td>
+              <td>14px</td>
+              <td>Auto</td>
+              <td>SemiBold</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="kit-block">
+        <div class="kit-block__title">
+          <h2 class="h-2">Colour</h2>
+          <p>Lexend</p>
+        </div>
+        <div class="kit-category">
+          <h3 class="h3 kit-category__title">Monochrome</h3>
+          <ul class="list-colors">
+            <li class="list-colors__item">
+              <span class="color-block color-block--white"></span>
+              <p class="color-title">White</p>
+            </li>
+            <li class="list-colors__item">
+              <span class="color-block color-block--grey1"></span>
+              <p class="color-title">Grey 1</p>
+            </li>
+            <li class="list-colors__item">
+              <span class="color-block color-block--grey2"></span>
+              <p class="color-title">Grey 2</p>
+            </li>
+            <li class="list-colors__item">
+              <span class="color-block color-block--grey3"></span>
+              <p class="color-title">Grey 3</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="kit-category">
+          <h3 class="h3 kit-category__title">Colourful</h3>
+          <ul class="list-colors">
+            <li class="list-colors__item">
+              <span class="color-block color-block--primary"></span>
+              <p class="color-title">Primary</p>
+            </li>
+            <li class="list-colors__item">
+              <span class="color-block color-block--primary-dark"></span>
+              <p class="color-title">Primary Dark</p>
+            </li>
+            <li class="list-colors__item">
+              <span class="color-block color-block--primary-light"></span>
+              <p class="color-title">Primary light</p>
+            </li>
+            <li class="list-colors__item">
+              <span class="color-block color-block--secondary"></span>
+              <p class="color-title">Secondary</p>
+            </li>
+            <li class="list-colors__item">
+              <span class="color-block color-block--black"></span>
+              <p class="color-title">Black</p>
+            </li>
+            <li class="list-colors__item">
+              <span class="color-block color-block--danger"></span>
+              <p class="color-title">Danger</p>
+            </li>
+            <li class="list-colors__item">
+              <span class="color-block color-block--danger-light"></span>
+              <p class="color-title">Danger light</p>
+            </li>
+            <li class="list-colors__item">
+              <span class="color-block color-block--info"></span>
+              <p class="color-title">Info</p>
+            </li>
+            <li class="list-colors__item">
+              <span class="color-block color-block--info-light"></span>
+              <p class="color-title">Info Light</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="kit-block">
+        <div class="kit-block__title">
+          <h2 class="h-2">Components</h2>
+          <p>Lexend</p>
+        </div>
+        <div class="kit-category">
+          <h3 class="h3 kit-category__title">Buttons</h3>
+          <div class="buttons-container">
+            <button class="btn btn--green">More Articles</button>
+            <button class="btn btn--white">More Articles</button>
+            <button class="btn btn--icon-only btn--green">
+              <svg class="btn__icon">
+                <use xlink:href="img/icons/sprite.svg#Arrow"></use>
+              </svg>
+            </button>
+            <button class="btn btn--icon-only btn--white">
+              <svg class="btn__icon">
+                <use xlink:href="img/icons/sprite.svg#Arrow"></use>
+              </svg>
+            </button>
+            <button class="btn btn--white">
+              <svg class="btn__icon">
+                <use xlink:href="img/icons/sprite.svg#Arrow"></use>
+              </svg>
+              More Articles
+            </button>
+            <button class="btn btn--white">
+              More Articles
+              <svg class="btn__icon">
+                <use xlink:href="img/icons/sprite.svg#Arrow"></use>
+              </svg>
+            </button>
+            <button class="btn btn--green">
+              <svg class="btn__icon">
+                <use xlink:href="img/icons/sprite.svg#Arrow"></use>
+              </svg>
+              More Articles
+            </button>
+            <button class="btn btn--green">
+              More Articles
+              <svg class="btn__icon">
+                <use xlink:href="img/icons/sprite.svg#Arrow"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="container-gray">
+            <div class="custom-drop-down" id="more-articles-drop">
+              <button
+                class="custom-drop"
+                aria-haspopup="listbox"
+                aria-controls="more-articles-listbox"
+                aria-expanded="false"
+                aria-labelledby="more-articles-label"
+                aria-activedescendant=""
+                tabindex="0"
+              >
+                <span id="more-articles-label"> More Articles </span>
+                <svg>
+                  <use xlink:href="img/icons/sprite.svg#arrow-down"></use>
+                </svg>
+              </button>
+              <ul
+                id="more-articles-listbox"
+                role="listbox"
+                aria-labelledby="more-articles-label"
+                tabindex="-1"
+              >
+                <li
+                  id="more-articles-option-html"
+                  class="custom-option-drop"
+                  role="option"
+                  aria-selected="false"
+                  option="option-html"
+                  data-id="html"
+                >
+                  HTML
+                </li>
+                <li
+                  id="more-articles-option-css"
+                  class="custom-option-drop"
+                  role="option"
+                  aria-selected="false"
+                  option="option-css"
+                  data-id="css"
+                >
+                  CSS
+                </li>
+                <li
+                  id="more-articles-option-js"
+                  class="custom-option-drop"
+                  role="option"
+                  aria-selected="false"
+                  option="option-js"
+                  data-id="js"
+                >
+                  JavaScript
+                </li>
+                <li
+                  id="more-articles-option-react"
+                  class="custom-option-drop"
+                  role="option"
+                  aria-selected="false"
+                  option="option-react"
+                  data-id="react"
+                >
+                  React
+                </li>
+              </ul>
+            </div>
+            <div class="custom-drop-down" id="more-art1">
+              <button
+                class="custom-drop"
+                aria-haspopup="listbox"
+                aria-controls="more-art1-listbox"
+                aria-expanded="false"
+                aria-labelledby="more-art1-label"
+                aria-activedescendant=""
+              >
+                <span id="more-art1-label"> More Articles </span>
+                <svg>
+                  <use xlink:href="img/icons/sprite.svg#arrow-down"></use>
+                </svg>
+              </button>
+              <ul
+                id="more-art1-listbox"
+                role="listbox"
+                aria-labelledby="more-art1-label"
+                tabindex="-1"
+              >
+                <li
+                  id="more-art1-option-html"
+                  class="custom-option-drop"
+                  role="option"
+                  aria-selected="false"
+                  option="option-html"
+                  data-id="html"
+                >
+                  HTML
+                </li>
+                <li
+                  id="more-art1-option-css"
+                  class="custom-option-drop"
+                  role="option"
+                  aria-selected="false"
+                  option="option-css"
+                  data-id="css"
+                >
+                  CSS
+                </li>
+                <li
+                  id="more-art1-option-js"
+                  class="custom-option-drop"
+                  role="option"
+                  aria-selected="false"
+                  option="option-js"
+                  data-id="js"
+                >
+                  JavaScript
+                </li>
+                <li
+                  id="more-art1-option-react"
+                  class="custom-option-drop"
+                  role="option"
+                  aria-selected="false"
+                  option="option-react"
+                  data-id="react"
+                >
+                  React
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="kit-category">
+            <h3 class="h3 kit-category__title">Label</h3>
+            <span class="label label--popular">
+              <svg class="btn__icon">
+                <use xlink:href="img/icons/sprite.svg#fire"></use>
+              </svg>
+              Popular
+            </span>
+            <span class="label label--new-house">
+              <svg class="btn__icon">
+                <use xlink:href="img/icons/sprite.svg#House"></use>
+              </svg>
+              New house
+            </span>
+            <span class="label label--deals">
+              <svg class="btn__icon">
+                <use xlink:href="img/icons/sprite.svg#Wallet"></use>
+              </svg>
+              Best Deals
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="kit-category kit-category--flex">
+        <h3 class="h3 kit-category__title">Label</h3>
+        <div
+          class="custom-drop-down custom-drop-down--white"
+          id="more-articles-drop-white"
+        >
+          <button class="custom-drop">
+            <span> More Articles </span>
+            <svg>
+              <use xlink:href="img/icons/sprite.svg#arrow-down"></use>
+            </svg>
+          </button>
+          <ul>
+            <li class="custom-option-drop" data-id="html">HTML</li>
+            <li class="custom-option-drop" data-id="css">CSS</li>
+            <li class="custom-option-drop" data-id="js">JavaScript</li>
+            <li class="custom-option-drop" data-id="react">React</li>
+          </ul>
+        </div>
+        <div class="form-input form-input--textarea">
+          <div class="form-input__wrapper">
+            <textarea
+              class="form-input__field"
+              id="message"
+              placeholder="Textarea"
+              maxlength="500"
+            ></textarea>
+            <span class="form-input__count">0/500</span>
+          </div>
+        </div>
+        <div class="form-input form-input--location" for="location">
+          <div class="input-location">
+            <svg class="input-location__icon">
+              <use xlink:href="img/icons/sprite.svg#Location"></use>
+            </svg>
+            <input
+              class="form-input__field input-location__field"
+              type="location"
+              id="location"
+              placeholder="Search for the location you want!"
+            />
+            <button class="btn btn--green input-location__search-button">
+              Search
+              <svg class="btn__icon">
+                <use xlink:href="img/icons/sprite.svg#Arrow"></use>
+              </svg>
+            </button>
+          </div>
+          <span class="form-input__error">Filed erorr. Please fix it</span>
+        </div>
+        <div class="form-input" for="email">
+          <input
+            class="form-input__field"
+            type="email"
+            id="email"
+            placeholder="Your email here"
+            autocomplete="email"
+          />
+          <span class="form-input__error">Filed erorr. Please fix it</span>
+        </div>
+        <label class="form-checkbox" for="consent">
+          <input
+            type="checkbox"
+            name="consent"
+            id="consent"
+            class="form-checkbox__input"
+          />
+          <span class="form-checkbox__checkmark"></span>
+          I give consent to the processing of my personal data given in the
+          contact form above under the terms and conditions of Grid Dynamics
+          Privacy Policy.
+        </label>
+      </div>
+    </div>
+  </body>
+</html>

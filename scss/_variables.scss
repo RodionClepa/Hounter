@@ -1,0 +1,40 @@
+// COLORS
+$white: #FFFFFF;
+$white-translucent: rgba($white, 0.1);
+$black: #1B1C57;
+$grey-1: #E0E3EB;
+$grey-2: #888B97;
+$grey-3: #626687;
+
+$primary: #10B981;
+$primary-dark: #0B9567;
+$primary-light: #D1FAE5;
+$secondary: #F59E0B;
+$danger: #EF4444;
+$danger-light: #FEE2E2;
+$info: #1D4ED8;
+$info-light: #DBEAFE;
+
+// FONTS
+$font-primary: "Lexend", sans-serif;
+
+// FONTS weight
+$weight-black: 900;
+$weight-semi-bold: 600;
+$weight-medium: 500;
+$weight-regular: 400;
+$weight-light: 300;
+
+// SPACES
+$space-xxs: 0.4rem; // 4px
+$space-xs: 0.8rem; // 8px
+$space-sm: 1.2rem; // 12px
+$space-md: 1.6rem; // 16px
+$space-lg: 2.4rem; // 24px
+// $space-xl: 3.2rem; // 32px
+// $space-xxl: 4.8rem; // 48px
+
+// Radius
+$radius-md: 0.8rem;
+
+$max-width: 120rem;
