@@ -107,8 +107,9 @@ $card-width: 78rem;
   &__dot {
     border: none;
     background-color: $grey-1;
-    width: 0.8rem;
-    height: 0.8rem;
+    // Smaller buttons will cause `Touch targets do not have sufficient size or spacing`
+    width: 1.2rem;
+    height: 1.2rem;
     border-radius: 50%;
     cursor: pointer;
     transition: background-color 0.5s;

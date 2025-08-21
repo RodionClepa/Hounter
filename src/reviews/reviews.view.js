@@ -107,7 +107,7 @@ export class ReviewView extends View {
   }
 
   _generateDot(number) {
-    return `<button class="dots__dot" data-slide="${number}"></button>`;
+    return `<button class="dots__dot" data-slide="${number}" aria-label="Slide ${number}"></button>`;
   }
 
   _generateMarkup() {
@@ -124,9 +124,9 @@ export class ReviewView extends View {
           alt="${review.title}"
         />
         <div class="slide-show__container-review">
-          <h4 class="h-4 review__title">
+          <h3 class="h-3 review__title">
             ${review.title}
-          </h4>
+          </h3>
           <p class="review__text label-md grey-3">
             ${review.text}
           </p>
