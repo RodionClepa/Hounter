@@ -1,5 +1,6 @@
 import { EventBus } from "../EventBus.js";
 import { View } from "../View.js";
+import { debounce } from "../utility/debounce.js";
 
 export class ReviewView extends View {
   _container = document.getElementById("slide-show");
@@ -12,11 +13,12 @@ export class ReviewView extends View {
     this._container.addEventListener("scroll", () => {
       requestAnimationFrame(() => this._trackCenteredSlide());
     });
-
-    window.addEventListener("resize", () => {
+    const handleResize = () => {
       this._cacheSlideCenters();
       this._trackCenteredSlide();
-    });
+    };
+
+    window.addEventListener("resize", debounce(handleResize.bind(this), 200));
 
     this._containerDots.addEventListener(
       "click",
@@ -122,6 +124,7 @@ export class ReviewView extends View {
           class="slide-show__image"
           src="${review.image}"
           alt="${review.title}"
+          loading="lazy"
         />
         <div class="slide-show__container-review">
           <h3 class="h-3 review__title">
@@ -136,6 +139,7 @@ export class ReviewView extends View {
                 src="${review.user.avatar}"
                 alt="${review.user.name}"
                 class="contact-info__image"
+                loading="lazy"
               />
               <span>
                 <p class="label-semi-bold">${review.user.name}</p>
@@ -144,7 +148,7 @@ export class ReviewView extends View {
             </div>
             <div class="rating">
               <svg class="rating__icon">
-                <use xlink:href="img/icons/sprite.svg#Star"></use>
+                <use href="img/icons/sprite.svg#Star"></use>
               </svg>
               <h4 class="h-4">${review.rating}</h4>
             </div>

@@ -22,11 +22,9 @@ $card-width: 78rem;
     position: relative;
     height: 50rem;
     width: 100vw;
-    max-width: min-content;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
-    padding-inline-end: calc($horizontal-margin + $card-width/2 - $space-xl * 2);
-    padding-inline-start: calc($horizontal-margin + $card-width/2 - $space-xl * 2);
+    padding-inline: calc($horizontal-margin + $card-width/2 - $space-xl * 2);
 
     &__item {
       position: relative;
