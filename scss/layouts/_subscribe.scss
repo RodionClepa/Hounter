@@ -16,10 +16,30 @@
     display: flex;
     flex-direction: column;
     gap: $space-xl;
+    width: 500px;
   }
 
   &__title {
     text-align: center;
+  }
+
+  &__image-wrap {
+    flex: 1;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media(max-width: 1200px) {
+    &__image-wrap {
+      display: none;
+    }
+
+    &__block {
+      width: 100%;
+    }
   }
 }
 
