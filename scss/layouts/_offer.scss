@@ -11,6 +11,7 @@
     position: absolute;
     right: -20%;
     top: -70%;
+    z-index: $z-index-negative;
   }
 
   &__info-container {
