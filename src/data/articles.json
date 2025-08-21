@@ -1,10 +1,10 @@
 [
   {
     "id": 0,
-    "image": "img/images/house-image1.png",
+    "image": "img/images/house-image1.webp",
     "author": {
       "name": "Dianne Russell",
-      "avatar": "img/assets/avatar-10.jpg"
+      "avatar": "img/assets/avatar-10.webp"
     },
     "title": "The things we need to check when we want to buy a house",
     "readTime": "4",
@@ -13,10 +13,10 @@
   },
   {
     "id": 1,
-    "image": "img/images/house-image2.png",
+    "image": "img/images/house-image2.webp",
     "author": {
       "name": "Cameron Williamson",
-      "avatar": "img/assets/avatar-4.jpg"
+      "avatar": "img/assets/avatar-4.webp"
     },
     "title": "Top 5 interior design tips for modern homes",
     "readTime": "3",
@@ -25,10 +25,10 @@
   },
   {
     "id": 2,
-    "image": "img/images/house-image3.png",
+    "image": "img/images/house-image3.webp",
     "author": {
       "name": "Kristin Watson",
-      "avatar": "img/assets/avatar-5.jpg"
+      "avatar": "img/assets/avatar-5.webp"
     },
     "title": "How to invest smartly in real estate",
     "readTime": "5",
@@ -37,10 +37,10 @@
   },
   {
     "id": 3,
-    "image": "img/images/house-image1.png",
+    "image": "img/images/house-image1.webp",
     "author": {
       "name": "Esther Howard",
-      "avatar": "img/assets/avatar-10.jpg"
+      "avatar": "img/assets/avatar-10.webp"
     },
     "title": "Mistakes first-time home buyers make",
     "readTime": "6",
@@ -49,10 +49,10 @@
   },
   {
     "id": 4,
-    "image": "img/images/house-image2.png",
+    "image": "img/images/house-image2.webp",
     "author": {
       "name": "Marvin McKinney",
-      "avatar": "img/assets/avatar-5.jpg"
+      "avatar": "img/assets/avatar-5.webp"
     },
     "title": "Understanding mortgage basics in 2021",
     "readTime": "4",
@@ -61,10 +61,10 @@
   },
   {
     "id": 5,
-    "image": "img/images/house-image3.png",
+    "image": "img/images/house-image3.webp",
     "author": {
       "name": "Savannah Nguyen",
-      "avatar": "img/assets/avatar-4.jpg"
+      "avatar": "img/assets/avatar-4.webp"
     },
     "title": "Is it better to rent or buy a house in 2021?",
     "readTime": "7",
