@@ -3,7 +3,7 @@
 $card-width: 78rem;
 
 .reviews {
-  margin-top: $space-xxl;
+  margin-top: $section-margin-top;
   display: flex;
   flex-direction: column;
   gap: $space-xl;
@@ -13,6 +13,7 @@ $card-width: 78rem;
 
   &__header {
     text-align: center;
+    margin-top: 1rem;
   }
 
   .slide-show {
