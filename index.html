@@ -3,6 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Discover and buy the best houses and apartments around the world. Find your perfect home today!"
+    />
+    <meta
+      name="keywords"
+      content="Buy House, Buy Appartment, Appartment, Appartments, House, Houses, Home"
+    />
+    <meta name="author" content="Hounter" />
     <title>Hounter</title>
     <link href="css/main.css" rel="stylesheet" />
     <script type="module" defer src="src/script.js"></script>
@@ -75,78 +84,86 @@
               where it will be easier for you
             </p>
           </div>
-          <div class="form-input form-input--location" for="location">
-            <div class="input-location">
-              <svg class="input-location__icon">
-                <use xlink:href="img/icons/sprite.svg#Location"></use>
-              </svg>
-              <input
-                class="form-input__field input-location__field"
-                type="location"
-                id="location"
-                placeholder="Search for the location you want!"
-              />
-              <button class="btn btn--green input-location__search-button">
-                Search
-                <svg class="btn__icon">
-                  <use xlink:href="img/icons/sprite.svg#Arrow"></use>
+          <form action="#">
+            <div class="form-input form-input--location" for="location">
+              <label for="location" class="sr-only">Location Search</label>
+              <div class="input-location">
+                <svg class="input-location__icon">
+                  <use href="img/icons/sprite.svg#Location"></use>
                 </svg>
-              </button>
+                <input
+                  class="form-input__field input-location__field"
+                  type="search"
+                  id="location"
+                  placeholder="Search for the location you want!"
+                />
+                <button class="btn btn--green input-location__search-button">
+                  Search
+                  <svg class="btn__icon">
+                    <use href="img/icons/sprite.svg#Arrow"></use>
+                  </svg>
+                </button>
+              </div>
+              <span class="form-input__error">Filed erorr. Please fix it</span>
             </div>
-            <span class="form-input__error">Filed erorr. Please fix it</span>
-          </div>
+          </form>
           <div class="partnership">
             <p class="grey-2">Our Partnership</p>
             <ul class="partnership__list">
               <li class="partnership__item">
                 <img
                   class="partnership__logo"
-                  alt="Partner Logo"
-                  src="img/images/traveloka.png"
+                  alt="Traveloka Logo"
+                  src="img/images/traveloka.webp"
                 />
               </li>
               <li class="partnership__item">
                 <img
                   class="partnership__logo"
-                  alt="Partner Logo"
-                  src="img/images/tiket.png"
+                  alt="Tiket Logo"
+                  src="img/images/tiket.webp"
                 />
               </li>
               <li class="partnership__item">
                 <img
                   class="partnership__logo"
-                  alt="Partner Logo"
-                  src="img/images/airbnb.png"
+                  alt="Airbnb Logo"
+                  src="img/images/airbnb.webp"
                 />
               </li>
               <li class="partnership__item">
                 <img
                   class="partnership__logo"
-                  alt="Partner Logo"
-                  src="img/images/tripadvisor.png"
+                  alt="Tripadvisor Logo"
+                  src="img/images/tripadvisor.webp"
                 />
               </li>
             </ul>
           </div>
         </div>
         <div class="hero__image-container">
+          <img
+            src="img/images/hero-image.webp"
+            alt="Hero Image"
+            class="hero__image"
+          />
           <div class="stat-carousel">
             <ul class="carousel-track hero__stat-list" id="stats-list">
               <li class="hero__stat-item">
                 <div class="hero__stat-image hero__stat-image--stack">
                   <img
                     class="user-avatar"
-                    src="img/assets/avatar-4.jpg"
+                    src="img/assets/avatar-10.webp"
                     alt="Avatar 4"
                   />
                   <img
                     class="user-avatar"
-                    src="img/assets/avatar-5.jpg"
+                    src="img/assets/avatar-10.webp"
                     alt="Avatar 5"
                   />
                   <img
                     class="user-avatar"
-                    src="img/assets/avatar-6.jpg"
+                    src="img/assets/avatar-10.webp"
                     alt="Avatar 6"
                   />
                 </div>
@@ -159,7 +176,7 @@
                 <div class="hero__stat-image hero__stat-image--stack">
                   <img
                     class="user-avatar"
-                    src="img/assets/house-1.png"
+                    src="img/assets/house-1.webp"
                     alt="Avatar 4"
                   />
                 </div>
@@ -172,7 +189,7 @@
                 <div class="hero__stat-image hero__stat-image--stack">
                   <img
                     class="user-avatar"
-                    src="img/assets/avatar-10.jpg"
+                    src="img/assets/avatar-10.webp"
                     alt="Avatar 4"
                   />
                 </div>
