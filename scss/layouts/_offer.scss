@@ -4,6 +4,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 12rem;
+  margin-top: $section-margin-top;
 
   &__info-container {
     flex: 1 1 524px;
@@ -75,6 +76,11 @@
         transform: translate(-50%, -50%);
         cursor: pointer;
         display: flex;
+      }
+
+      &__icon {
+        width: 4.8rem;
+        height: 4.8rem;
       }
     }
 
