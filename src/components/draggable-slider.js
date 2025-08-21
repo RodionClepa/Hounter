@@ -115,7 +115,7 @@ export class DraggableSlider {
       this._slider.clientWidth -
       this._getPaddingEnd();
 
-    return lastCardRight <= sliderVisibleRight;
+    return lastCardRight <= Math.ceil(sliderVisibleRight);
   }
 
   isStart() {

@@ -1,5 +1,9 @@
 @use "../variables" as *;
 
+.recommendations {
+  margin-top: $section-margin-top;
+}
+
 .slider {
   &__header {
     display: flex;
