@@ -2,67 +2,67 @@
   {
     "name": "Coral Bay Villa",
     "price": "47000000",
-    "image": "img/assets/villa1.png",
+    "image": "img/assets/villa1.webp",
     "dealType": "best",
     "owner": {
       "name": "Ella Bennett",
       "address": "Key West, Florida",
-      "image": "img/assets/avatar-5.jpg"
+      "image": "img/assets/avatar-5.webp"
     }
   },
   {
     "name": "Highland Retreat Villa",
     "price": "53000000",
-    "image": "img/assets/villa1.png",
+    "image": "img/assets/villa1.webp",
     "dealType": "new",
     "owner": {
       "name": "Oliver Hayes",
       "address": "Aspen, Colorado",
-      "image": "img/assets/avatar-5.jpg"
+      "image": "img/assets/avatar-5.webp"
     }
   },
   {
     "name": "Seaside Breeze Villa",
     "price": "46000000",
-    "image": "img/assets/villa1.png",
+    "image": "img/assets/villa1.webp",
     "dealType": "popular",
     "owner": {
       "name": "Grace Carter",
       "address": "Monterey, California",
-      "image": "img/assets/avatar-5.jpg"
+      "image": "img/assets/avatar-5.webp"
     }
   },
   {
     "name": "Pinecrest Villa",
     "price": "48000000",
-    "image": "img/assets/villa1.png",
+    "image": "img/assets/villa1.webp",
     "dealType": "new",
     "owner": {
       "name": "Jack Thompson",
       "address": "Lake Tahoe, Nevada",
-      "image": "img/assets/avatar-5.jpg"
+      "image": "img/assets/avatar-5.webp"
     }
   },
   {
     "name": "Silver Oaks Villa",
     "price": "54000000",
-    "image": "img/assets/villa1.png",
+    "image": "img/assets/villa1.webp",
     "dealType": "best",
     "owner": {
       "name": "Chloe Ramirez",
       "address": "Santa Fe, New Mexico",
-      "image": "img/assets/avatar-5.jpg"
+      "image": "img/assets/avatar-5.webp"
     }
   },
   {
     "name": "Rosewood Valley Villa",
     "price": "50000000",
-    "image": "img/assets/villa1.png",
+    "image": "img/assets/villa1.webp",
     "dealType": "popular",
     "owner": {
       "name": "Henry Foster",
       "address": "Charleston, South Carolina",
-      "image": "img/assets/avatar-5.jpg"
+      "image": "img/assets/avatar-5.webp"
     }
   }
 ]

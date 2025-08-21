@@ -2,67 +2,67 @@
   {
     "name": "Roselands House",
     "price": "35000000",
-    "image": "img/assets/house1.png",
+    "image": "img/assets/house1.webp",
     "dealType": "popular",
     "owner": {
       "name": "Dianne Russell",
       "address": "Manchester, Kentucky",
-      "image": "img/assets/avatar-4.jpg"
+      "image": "img/assets/avatar-4.webp"
     }
   },
   {
     "name": "Sunny Ridge Estate",
     "price": "42000000",
-    "image": "img/assets/house1.png",
+    "image": "img/assets/house1.webp",
     "dealType": "new",
     "owner": {
       "name": "Evan Brooks",
       "address": "Springfield, Illinois",
-      "image": "img/assets/avatar-4.jpg"
+      "image": "img/assets/avatar-4.webp"
     }
   },
   {
     "name": "Maplewood Villa",
     "price": "29500000",
-    "image": "img/assets/house1.png",
+    "image": "img/assets/house1.webp",
     "dealType": "best",
     "owner": {
       "name": "Julia Carter",
       "address": "Reno, Nevada",
-      "image": "img/assets/avatar-4.jpg"
+      "image": "img/assets/avatar-4.webp"
     }
   },
   {
     "name": "Cedar Point Lodge",
     "price": "36500000",
-    "image": "img/assets/house1.png",
+    "image": "img/assets/house1.webp",
     "dealType": "new",
     "owner": {
       "name": "Marcus Nguyen",
       "address": "Boise, Idaho",
-      "image": "img/assets/avatar-4.jpg"
+      "image": "img/assets/avatar-4.webp"
     }
   },
   {
     "name": "Oak Hill Bungalow",
     "price": "31000000",
-    "image": "img/assets/house1.png",
+    "image": "img/assets/house1.webp",
     "dealType": "new",
     "owner": {
       "name": "Sophie Lin",
       "address": "Tucson, Arizona",
-      "image": "img/assets/avatar-4.jpg"
+      "image": "img/assets/avatar-4.webp"
     }
   },
   {
     "name": "Willow Creek Retreat",
     "price": "39800000",
-    "image": "img/assets/house1.png",
+    "image": "img/assets/house1.webp",
     "dealType": "popular",
     "owner": {
       "name": "Nathan Cole",
       "address": "Charleston, South Carolina",
-      "image": "img/assets/avatar-4.jpg"
+      "image": "img/assets/avatar-4.webp"
     }
   }
 ]
