@@ -3,17 +3,14 @@
 .offer {
   position: relative;
   margin-top: $section-margin-top;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12rem;
 
   &__blur {
     position: absolute;
     right: 0;
     top: -70%;
-  }
-
-  &__container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12rem;
   }
 
   &__info-container {
