@@ -37,7 +37,7 @@ export class ArticlePreviewView extends View {
       <img
         src="${this._data.image}"
         alt="${this._data.title}"
-        class="blog__image"
+        class="blog__preview-image"
       />
       <div class="user">
         <img
@@ -54,7 +54,7 @@ export class ArticlePreviewView extends View {
       <p class="grey-3">
         ${this._data.text}
       </p>
-      <div class="blog__time">
+      <div class="blog__preview-time">
         <svg class="blog__clock-icon">
           <use xlink:href="img/icons/sprite.svg#Clock"></use>
         </svg>
