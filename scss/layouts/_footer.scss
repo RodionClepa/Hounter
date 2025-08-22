@@ -2,15 +2,15 @@
 
 .footer {
   padding-bottom: $pad-regular;
-  position: relative;
   display: flex;
-  justify-content: center;
+  overflow: hidden;
 
   &__wrapper {
     margin-top: $space-xxl;
     display: flex;
     justify-content: space-between;
     width: 100%;
+    position: relative;
   }
 
   &__left {
@@ -56,8 +56,8 @@
 
   &__blur {
     position: absolute;
-    right: 0;
-    bottom: 0;
+    right: -10%;
+    bottom: -250%;
     pointer-events: none;
     z-index: $z-index-negative;
   }

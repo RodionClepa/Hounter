@@ -609,42 +609,62 @@
         </form>
       </section>
     </main>
-    <footer class="footer">
-      <img
-        src="img/images/blur-footer.png"
-        alt="Blured Image"
-        class="footer__blur"
-      />
+    <footer class="footer section-center">
       <div class="footer__wrapper section-max-width p-right p-left">
+        <img src="img/assets/blur-offer.webp" alt="" class="footer__blur" />
         <div class="footer__left">
           <img
             src="img/images/logo.svg"
-            alt="Logo Image"
+            alt="Hounter Logo"
             class="footer__logo"
           />
-          <p class="medium-text grey-2">
+          <p class="grey-2">
             We provide information about properties such as houses, villas and
             apartments to help people find their dream home
           </p>
           <ul class="footer__social-list">
-            <li class="footer__social-item">
-              <img src="img/images/facebook.svg" alt="Facebook Icon" />
+            <li>
+              <a href="#" aria-label="Visit our Facebook page">
+                <img
+                  src="img/images/facebook.svg"
+                  alt="Facebook Icon"
+                  loading="lazy"
+                />
+              </a>
             </li>
-            <li class="footer__social-item">
-              <img src="img/images/twitter.svg" alt="Twitter Icon" />
+            <li>
+              <a href="#" aria-label="Visit our Twitter profile">
+                <img
+                  src="img/images/twitter.svg"
+                  alt="Twitter Icon"
+                  loading="lazy"
+                />
+              </a>
             </li>
-            <li class="footer__social-item">
-              <img src="img/images/instagram.svg" alt="Instagram Icon" />
+            <li>
+              <a href="#" aria-label="Visit our Instagram profile">
+                <img
+                  src="img/images/instagram.svg"
+                  alt="Instagram Icon"
+                  loading="lazy"
+                />
+              </a>
             </li>
-            <li class="footer__social-item">
-              <img src="img/images/pinster.svg" alt="Pinster Icon" />
+            <li>
+              <a href="#" aria-label="Visit our Pinterest board">
+                <img
+                  src="img/images/pinster.svg"
+                  alt="Pinterest Icon"
+                  loading="lazy"
+                />
+              </a>
             </li>
           </ul>
         </div>
 
         <div class="footer__right">
           <div class="column">
-            <p class="subtitle">Property</p>
+            <h4 class="subtitle">Property</h4>
             <ul class="column__list">
               <li class="column__item">
                 <a href="#" class="column__link">House</a>
@@ -658,7 +678,7 @@
             </ul>
           </div>
           <div class="column">
-            <p class="subtitle">Article</p>
+            <h4 class="subtitle">Article</h4>
             <ul class="column__list">
               <li class="column__item">
                 <a href="#" class="column__link">New Article</a>
@@ -675,13 +695,14 @@
             </ul>
           </div>
           <div class="column">
-            <p class="subtitle">Contact</p>
+            <h4 class="subtitle">Contact</h4>
             <ul class="column__list">
               <li class="column__item">
                 <a
                   href="https://maps.google.com/?q=2464 Royal Ln. Mesa, New Jersey 45463"
                   class="column__link"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   2464 Royal Ln. Mesa, New Jersey 45463
                 </a>
@@ -703,13 +724,13 @@
     </footer>
     <div class="cookie">
       <svg class="cookie__icon">
-        <use xlink:href="img/icons/sprite.svg#Cookie"></use>
+        <use href="img/icons/sprite.svg#Cookie"></use>
       </svg>
       <p class="semi-bold-text cookie__text">We are using cookies</p>
 
       <button class="cookie__close" aria-label="Close Cookie Button">
-        <svg class="cookie__cross">
-          <use xlink:href="img/icons/sprite.svg#Cross"></use>
+        <svg class="cookie__cross" aria-hidden="true">
+          <use href="img/icons/sprite.svg#Cross"></use>
         </svg>
       </button>
     </div>
