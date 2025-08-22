@@ -4,13 +4,22 @@
   margin-top: $section-margin-top;
 
   &__wrapper {
-    margin-top: $space-xl;
+    border-radius: 3.2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: $z-index-negative;
+  }
+
+  &__content {
     display: flex;
     gap: $space-xxl;
     align-items: center;
-    background-image: url("#{$img-path}images/sub-bg.webp");
-    background-size: cover;
-    border-radius: 3.2rem;
     padding: $space-xl;
   }
 

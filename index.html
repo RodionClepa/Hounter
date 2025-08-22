@@ -404,42 +404,52 @@
         class="subscribe section-center section-max-width p-right p-left"
       >
         <div class="subscribe__wrapper">
-          <div class="subscribe__image-wrap">
-            <img
-              src="img/images/left-sub.webp"
-              alt="Subscribe Image"
-              class="subscribe__image"
-            />
-          </div>
-          <div class="subscribe__block">
-            <h2 class="h-2 subscribe__title">
-              Subscribe For More Info and update from Hounter
-            </h2>
-
-            <div class="form-input form-input--location" for="location">
-              <div class="input-location">
-                <svg class="input-location__icon" id="subscribe__icon">
-                  <use xlink:href="img/icons/sprite.svg#Mail"></use>
-                </svg>
-                <input
-                  class="form-input__field input-location__field"
-                  id="email"
-                  autocomplete="email"
-                  placeholder="Search for the location you want!"
-                />
-                <button class="btn btn--green input-location__search-button">
-                  Subscribe Now
-                </button>
-              </div>
-              <span class="form-input__error">Filed erorr. Please fix it</span>
+          <img
+            src="img/images/sub-bg.webp"
+            alt="Super nice background image for subscribe"
+            class="subscribe__background"
+          />
+          <div class="subscribe__content">
+            <div class="subscribe__image-wrap">
+              <img
+                src="img/images/left-sub.webp"
+                alt="Subscribe Image"
+                class="subscribe__image"
+              />
             </div>
-          </div>
-          <div class="subscribe__image-wrap">
-            <img
-              src="img/images/right-sub.webp"
-              alt="Subscribe Image"
-              class="subscribe__image"
-            />
+            <div class="subscribe__block">
+              <h2 class="h-2 subscribe__title">
+                Subscribe For More Info and update from Hounter
+              </h2>
+
+              <div class="form-input form-input--location" for="location">
+                <div class="input-location">
+                  <svg class="input-location__icon" id="subscribe__icon">
+                    <use href="img/icons/sprite.svg#Mail"></use>
+                  </svg>
+                  <input
+                    class="form-input__field input-location__field"
+                    id="email"
+                    autocomplete="email"
+                    placeholder="Search for the location you want!"
+                  />
+                  <button class="btn btn--green input-location__search-button">
+                    Subscribe Now
+                  </button>
+                </div>
+                <span class="form-input__error"
+                  >Filed erorr. Please fix it</span
+                >
+              </div>
+            </div>
+            <div class="subscribe__image-wrap">
+              <img
+                src="img/images/right-sub.webp"
+                alt="Subscribe Image"
+                class="subscribe__image"
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </section>
