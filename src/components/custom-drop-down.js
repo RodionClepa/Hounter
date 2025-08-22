@@ -79,7 +79,7 @@ export class CustomDropdown {
   }
 
   updateLabel(index) {
-    this.button.querySelector("label").textContent =
+    this.button.querySelector("span").textContent =
       this.options[index].innerText;
   }
 
