@@ -2,14 +2,14 @@
 
 .header {
   position: absolute;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
   z-index: $z-index-header;
   padding: $space-lg;
+  width: 100%;
 
-  &__blur {
-    position: absolute;
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
   }
 }
 
