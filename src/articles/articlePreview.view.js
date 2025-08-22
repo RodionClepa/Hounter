@@ -38,6 +38,7 @@ export class ArticlePreviewView extends View {
         src="${this._data.image}"
         alt="${this._data.title}"
         class="blog__preview-image"
+        loading="lazy"
       />
       <div class="user">
         <img
@@ -56,7 +57,7 @@ export class ArticlePreviewView extends View {
       </p>
       <div class="blog__preview-time">
         <svg class="blog__clock-icon">
-          <use xlink:href="img/icons/sprite.svg#Clock"></use>
+          <use href="img/icons/sprite.svg#Clock"></use>
         </svg>
         ${this._data.readTime} min read | ${this._formateDate(this._data.date)}
       </div>

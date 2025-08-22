@@ -4,7 +4,6 @@ import { View } from "../View.js";
 export class ArticlesView extends View {
   _container = document.getElementById("blogs__list");
   _buttonMoreArticles = document.getElementById("more-articles");
-  _containerSelected = document.getElementById("blog__preview");
   eventTypes = {
     moreArticlesPressed: "moreArticlesPressed",
     articleClicked: "articleClicked",
@@ -24,6 +23,11 @@ export class ArticlesView extends View {
     this.DELAY_ITEM = 500;
   }
 
+  setActive(id) {
+    this.eventBus.notify(this.eventTypes.articleClicked, id);
+    this._setActiveArticle(id);
+  }
+
   subscribe(eventType, listener) {
     this.eventBus.subscribe(eventType, listener);
   }
@@ -36,7 +40,7 @@ export class ArticlesView extends View {
 
       item.classList.add("blogs__item--invisible");
       this._container.appendChild(item);
-      this._container.scrollIntoView({ behavior: "smooth" });
+      item.scrollIntoView({ behavior: "smooth" });
 
       await new Promise(requestAnimationFrame);
 
@@ -55,6 +59,20 @@ export class ArticlesView extends View {
 
     const id = clickedButton.dataset.id;
     this.eventBus.notify(this.eventTypes.articleClicked, id);
+    this._setActiveArticle(id);
+  }
+
+  _setActiveArticle(id) {
+    console.log("activearticle");
+    const articlesEl = this._container.querySelectorAll(".blogs__item");
+    console.log(articlesEl);
+    articlesEl.forEach((article) => {
+      console.log(article.querySelector("button").dataset.id, id);
+      article.classList.toggle(
+        "active",
+        article.querySelector("button").dataset.id === id,
+      );
+    });
   }
 
   _generateMarkup() {
@@ -69,6 +87,7 @@ export class ArticlesView extends View {
             src="${article.image}"
             alt="${article.text}"
             class="blog__image"
+            loading="lazy"
           />
           <div class="blog__info">
             <div class="user">
@@ -76,6 +95,7 @@ export class ArticlesView extends View {
                 src="${article.author.avatar}"
                 alt="${article.author.name}"
                 class="user__avatar"
+                loading="lazy"
               />
               <p class="label-semibold grey-3">${article.author.name}</p>
             </div>
@@ -84,7 +104,7 @@ export class ArticlesView extends View {
             </p>
             <div class="blog__time">
               <svg class="blog__clock-icon">
-                <use xlink:href="img/icons/sprite.svg#Clock"></use>
+                <use href="img/icons/sprite.svg#Clock"></use>
               </svg>
               ${article.readTime} min read | ${this._formateDate(article.date)}
             </div>
