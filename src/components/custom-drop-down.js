@@ -109,7 +109,6 @@ export class CustomDropdown {
     }
 
     e.preventDefault();
-    console.log("alo");
     if (!this.isOpen() && openKeys.includes(key)) {
       return this.open();
     }
@@ -126,7 +125,6 @@ export class CustomDropdown {
   }
 
   handleOptionClick(e) {
-    console.log("handleOptionClick");
     const li = e.target.closest("li");
     if (!li || !this.dropdownEl.contains(li)) return;
 

@@ -63,11 +63,8 @@ export class ArticlesView extends View {
   }
 
   _setActiveArticle(id) {
-    console.log("activearticle");
     const articlesEl = this._container.querySelectorAll(".blogs__item");
-    console.log(articlesEl);
     articlesEl.forEach((article) => {
-      console.log(article.querySelector("button").dataset.id, id);
       article.classList.toggle(
         "active",
         article.querySelector("button").dataset.id === id,
