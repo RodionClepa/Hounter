@@ -45,6 +45,7 @@ export class ArticlePreviewView extends View {
           src="${this._data.author.avatar}"
           alt="${this._data.author.name}"
           class="user__avatar"
+          loading="lazy"
         />
         <p class="label-semibold grey-3">${this._data.author.name}</p>
       </div>
