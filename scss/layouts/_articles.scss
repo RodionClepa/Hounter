@@ -36,6 +36,12 @@
     opacity: 1;
     transform: translateX(0);
     transition: opacity 0.5s ease, transform 0.5s ease;
+    border-radius: 1.6rem;
+
+    &.active {
+      animation: pulse-glow 1.5s infinite;
+      box-shadow: 0 0 10px $primary-translucent;
+    }
 
     &--invisible {
       opacity: 0;
@@ -116,5 +122,19 @@
     height: 3.2rem;
     border-radius: 100%;
     box-shadow: 0px 9px 32px 0px #595CDB1A;
+  }
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 5px 10px 5px $primary-translucent;
+  }
+
+  50% {
+    box-shadow: 5px 10px 20px $primary-translucent;
+  }
+
+  100% {
+    box-shadow: 5px 10px 5px $primary-translucent;
   }
 }

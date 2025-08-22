@@ -14,6 +14,7 @@ export class ArticlesController {
       this.data = data;
       this.view.render(this.data.slice(0, 3));
       this.preview.render(this.data[0]);
+      this.view.setActive(this.data[0].id.toString());
     });
 
     this.view.subscribe(this.view.eventTypes.moreArticlesPressed, () => {
