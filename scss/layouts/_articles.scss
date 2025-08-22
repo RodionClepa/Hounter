@@ -1,7 +1,7 @@
 @use "../variables" as *;
 
 .articles {
-  margin-top: $space-xl;
+  margin-top: $section-margin-top;
 
   &__header {
     display: flex;
