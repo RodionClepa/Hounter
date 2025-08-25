@@ -4,6 +4,14 @@
 .hero {
   display: flex;
   max-height: 72rem;
+  position: relative;
+
+  &__blur {
+    position: absolute;
+    z-index: $z-index-negative;
+    left: -10%;
+    top: -40%;
+  }
 
   &__intro {
     margin-top: 6rem;

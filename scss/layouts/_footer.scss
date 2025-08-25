@@ -1,0 +1,64 @@
+@use "../variables" as *;
+
+.footer {
+  padding-bottom: $pad-regular;
+  display: flex;
+  overflow: hidden;
+
+  &__wrapper {
+    margin-top: $space-xxl;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+  }
+
+  &__left {
+    width: 37.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: $space-lg;
+  }
+
+  &__logo {
+    width: 115px;
+    height: 36px;
+  }
+
+  &__social-list {
+    list-style: none;
+    display: flex;
+    gap: $space-lg;
+  }
+
+  &__right {
+    display: flex;
+    gap: $space-xl;
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      gap: $space-lg;
+
+      &__list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: $space-md;
+      }
+
+      &__link {
+        text-decoration: none;
+        color: $grey-2;
+      }
+    }
+  }
+
+  &__blur {
+    position: absolute;
+    right: -10%;
+    bottom: -225%;
+    pointer-events: none;
+    z-index: $z-index-negative;
+  }
+}
