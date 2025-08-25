@@ -1,0 +1,68 @@
+[
+  {
+    "name": "Skyline View Apartment",
+    "price": "22000000",
+    "image": "img/assets/apartment1.webp",
+    "dealType": "best",
+    "owner": {
+      "name": "Olivia Scott",
+      "address": "New York, New York",
+      "image": "img/assets/avatar-5.webp"
+    }
+  },
+  {
+    "name": "Riverfront Apartments",
+    "price": "18000000",
+    "image": "img/assets/apartment1.webp",
+    "dealType": "new",
+    "owner": {
+      "name": "James Wilson",
+      "address": "Chicago, Illinois",
+      "image": "img/assets/avatar-5.webp"
+    }
+  },
+  {
+    "name": "Central Park Residences",
+    "price": "25000000",
+    "image": "img/assets/apartment1.webp",
+    "dealType": "popular",
+    "owner": {
+      "name": "Emma Thompson",
+      "address": "Seattle, Washington",
+      "image": "img/assets/avatar-5.webp"
+    }
+  },
+  {
+    "name": "Downtown Luxe Apartment",
+    "price": "23000000",
+    "image": "img/assets/apartment1.webp",
+    "dealType": "new",
+    "owner": {
+      "name": "Liam Johnson",
+      "address": "Denver, Colorado",
+      "image": "img/assets/avatar-5.webp"
+    }
+  },
+  {
+    "name": "Maple Grove Flats",
+    "price": "19500000",
+    "image": "img/assets/apartment1.webp",
+    "dealType": "best",
+    "owner": {
+      "name": "Isabella Martinez",
+      "address": "Portland, Oregon",
+      "image": "img/assets/avatar-5.webp"
+    }
+  },
+  {
+    "name": "Sunset Towers",
+    "price": "21000000",
+    "image": "img/assets/apartment1.webp",
+    "dealType": "popular",
+    "owner": {
+      "name": "Benjamin Lee",
+      "address": "San Francisco, California",
+      "image": "img/assets/avatar-5.webp"
+    }
+  }
+]

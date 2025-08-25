@@ -4,7 +4,7 @@
   display: inline-flex;
   font-size: 1.4rem;
   font-weight: $weight-semi-bold;
-  line-height: 1;
+  line-height: 2.4rem;
   text-transform: capitalize;
   text-align: center;
   transition: 0.2s background-color;
@@ -35,7 +35,7 @@
 
   &--white {
     color: $primary-dark;
-    background-color: $white;
+    background: none;
 
     &:hover,
     &:active,
@@ -46,6 +46,11 @@
 
   &--icon-only {
     padding: $space-sm;
+  }
+
+  &--active {
+    background-color: $primary-light;
+    border: 1px solid transparent;
   }
 
 }

@@ -1,0 +1,36 @@
+@use "../mixins" as *;
+@use "../variables" as *;
+
+.stat-carousel {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  display: inline-flex;
+
+  >.carousel-track {
+    display: inline-flex;
+  }
+
+  .animate {
+    animation: 15s carousel-slide infinite linear;
+
+    @include mediaCarouselStop(calc($max-width + $carousel-add-width)) {
+      animation: none;
+      transform: translateX(0);
+    }
+  }
+
+  &:hover>.carousel-track {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes carousel-slide {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}

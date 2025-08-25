@@ -1,0 +1,140 @@
+@use "../variables" as *;
+
+.articles {
+  margin-top: $section-margin-top;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $space-md;
+  }
+
+  &__title {
+    max-width: 58rem;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.blogs {
+  &__container {
+    display: flex;
+    gap: $space-xl;
+    margin-top: $space-xl;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: $space-xl;
+    flex: 1;
+  }
+
+  &__item {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    border-radius: 1.6rem;
+
+    &.active {
+      animation: pulse-glow 1.5s infinite;
+      box-shadow: 0 0 10px $primary-translucent;
+    }
+
+    &--invisible {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+
+    .blog {
+      display: flex;
+      gap: $space-xl;
+      background: none;
+      border: none;
+      font-family: inherit;
+      cursor: pointer;
+
+      &__image {
+        width: 20rem;
+        height: 14.8rem;
+        border-radius: 1.6rem;
+        object-fit: cover;
+        flex-shrink: 0;
+      }
+
+      &__info {
+        display: flex;
+        flex-direction: column;
+        gap: $space-xs;
+        text-align: start;
+      }
+
+      &__time {
+        display: flex;
+        color: $grey-2;
+        gap: $space-sm;
+        align-items: center;
+      }
+    }
+  }
+}
+
+.blog__preview {
+  display: flex;
+  flex-direction: column;
+  gap: $space-md;
+  flex: 1;
+
+  &-image {
+    width: 100%;
+    height: 24rem;
+    border-radius: 1.6rem;
+    object-fit: cover;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: $space-xs;
+  }
+
+  &-time {
+    display: flex;
+    color: $grey-2;
+    gap: $space-sm;
+  }
+}
+
+.blog__clock-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.user {
+  display: flex;
+  gap: $space-md;
+  align-items: center;
+
+  &__avatar {
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 100%;
+    box-shadow: 0px 9px 32px 0px #595CDB1A;
+  }
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 5px 10px 5px $primary-translucent;
+  }
+
+  50% {
+    box-shadow: 5px 10px 20px $primary-translucent;
+  }
+
+  100% {
+    box-shadow: 5px 10px 5px $primary-translucent;
+  }
+}

@@ -1,0 +1,60 @@
+@use "../variables" as *;
+
+.subscribe {
+  margin-top: $section-margin-top;
+
+  &__wrapper {
+    border-radius: 3.2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: $z-index-negative;
+  }
+
+  &__content {
+    display: flex;
+    gap: $space-xxl;
+    align-items: center;
+    padding: $space-xl;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: $space-xl;
+    width: 500px;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__image-wrap {
+    flex: 1;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media(max-width: 1200px) {
+    &__image-wrap {
+      display: none;
+    }
+
+    &__block {
+      width: 100%;
+    }
+  }
+}
+
+#subscribe__icon {
+  color: $info;
+}
