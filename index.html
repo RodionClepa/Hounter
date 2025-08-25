@@ -52,27 +52,97 @@
     />
   </head>
   <body>
-    <header class="header section-max-width section-center p-left p-right">
-      <a href="/" class="logo">Hounter</a>
-      <nav class="navigation">
-        <ul class="navigation__list">
-          <li class="navigation__item">
-            <a class="navigation__link" href="#">Link</a>
-          </li>
-          <li class="navigation__item">
-            <a class="navigation__link" href="#">Link</a>
-          </li>
-          <li class="navigation__item">
-            <a class="navigation__link" href="#">Link</a>
-          </li>
-          <li class="navigation__item">
-            <a class="navigation__link" href="#">Link</a>
-          </li>
-        </ul>
-      </nav>
+    <header class="header section-center">
+      <div class="header__wrapper section-max-width p-left p-right">
+        <img src="img/images/logo.svg" alt="Logo Image" class="header__logo" />
+        <nav class="navigation">
+          <ul class="navigation__list">
+            <li class="navigation__item">
+              <a class="navigation__link" href="#">About Us</a>
+            </li>
+            <li class="navigation__item">
+              <a class="navigation__link" href="#">Article</a>
+            </li>
+            <li class="navigation__item">
+              <div class="custom-drop-down" id="property-drop">
+                <button
+                  class="custom-drop"
+                  aria-haspopup="listbox"
+                  aria-controls="property-listbox"
+                  aria-expanded="false"
+                  aria-labelledby="property-label"
+                  role="combobox"
+                  aria-activedescendant=""
+                  tabindex="0"
+                >
+                  <span id="property-label"> Property </span>
+                  <svg>
+                    <use href="img/icons/sprite.svg#arrow-down"></use>
+                  </svg>
+                </button>
+                <ul
+                  id="property-listbox"
+                  role="listbox"
+                  aria-labelledby="property-label"
+                  tabindex="-1"
+                >
+                  <li
+                    id="property-option-html"
+                    class="custom-option-drop"
+                    role="option"
+                    aria-selected="false"
+                    option="option-html"
+                    data-id="html"
+                  >
+                    HTML
+                  </li>
+                  <li
+                    id="property-option-css"
+                    class="custom-option-drop"
+                    role="option"
+                    aria-selected="false"
+                    option="option-css"
+                    data-id="css"
+                  >
+                    CSS
+                  </li>
+                  <li
+                    id="property-option-js"
+                    class="custom-option-drop"
+                    role="option"
+                    aria-selected="false"
+                    option="option-js"
+                    data-id="js"
+                  >
+                    JavaScript
+                  </li>
+                  <li
+                    id="property-option-react"
+                    class="custom-option-drop"
+                    role="option"
+                    aria-selected="false"
+                    option="option-react"
+                    data-id="react"
+                  >
+                    React
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="navigation__item">
+              <button class="btn btn--white">Sign Up</button>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <main>
       <section class="hero section-center">
+        <img
+          src="img/assets/blur-footer.webp"
+          alt="Bluered Image"
+          class="hero__blur"
+        />
         <div class="hero__intro p-left p-right">
           <div class="hero__text">
             <h1 class="h-1">
@@ -383,6 +453,356 @@
         <div class="slide-show hide-scrollbar" id="slide-show"></div>
         <div class="dots" id="review-dots"></div>
       </section>
+      <section class="articles section-max-width section-center p-left p-right">
+        <div class="articles__header">
+          <p class="description-text description-text--top">
+            See tips and trick from our partnership
+          </p>
+          <h2 class="h-2 articles__title">
+            Find out more about selling and buying homes
+          </h2>
+          <button class="btn btn--green" id="more-articles">
+            More Articles
+          </button>
+        </div>
+        <div class="blogs__container">
+          <ul class="blogs__list" id="blogs__list"></ul>
+          <article class="blog__preview" id="blog__preview"></article>
+        </div>
+      </section>
+      <section
+        class="subscribe section-center section-max-width p-right p-left"
+      >
+        <div class="subscribe__wrapper">
+          <img
+            src="img/images/sub-bg.webp"
+            alt="Super nice background image for subscribe"
+            class="subscribe__background"
+            loading="lazy"
+          />
+          <div class="subscribe__content">
+            <div class="subscribe__image-wrap">
+              <img
+                src="img/images/left-sub.webp"
+                alt="Subscribe Image"
+                class="subscribe__image"
+                loading="lazy"
+              />
+            </div>
+            <div class="subscribe__block">
+              <h2 class="h-2 subscribe__title">
+                Subscribe For More Info and updates from Hounter
+              </h2>
+
+              <div class="form-input form-input--location" for="location">
+                <div class="input-location">
+                  <svg class="input-location__icon" id="subscribe__icon">
+                    <use href="img/icons/sprite.svg#Mail"></use>
+                  </svg>
+                  <input
+                    class="form-input__field input-location__field"
+                    id="email"
+                    type="email"
+                    autocomplete="email"
+                    placeholder="Search for the location you want!"
+                  />
+                  <button class="btn btn--green input-location__search-button">
+                    Subscribe Now
+                  </button>
+                </div>
+                <span class="form-input__error"
+                  >Field erorr. Please fix it</span
+                >
+              </div>
+            </div>
+            <div class="subscribe__image-wrap">
+              <img
+                src="img/images/right-sub.webp"
+                alt="Subscribe Image"
+                class="subscribe__image"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="join section-center section-max-width p-right p-left">
+        <div class="join__info-container join__container">
+          <h3 class="h-3">Would You Like To Join?</h3>
+          <p class="grey-3">
+            Quickly get three quotes from these local that people love in online
+            reviews.
+          </p>
+          <div class="join__line"></div>
+          <p class="grey-3">Pick the whose estimate suits you best.</p>
+          <div class="join__line"></div>
+          <p class="grey-3">
+            We then make sure the work is done to your complete satisfaction.
+          </p>
+          <img
+            src="img/images/join-image.webp"
+            alt="Join Image"
+            class="join__image"
+          />
+        </div>
+        <form action="#" class="join__form join__container">
+          <div class="form__field">
+            <label class="form__label label-md" for="name">Name</label>
+            <div class="form-input">
+              <input
+                class="form-input__field"
+                id="name"
+                type="text"
+                placeholder="Your name here"
+                autocomplete="name"
+                required
+              />
+              <span class="form-input__error">Filed error. Please fix it</span>
+            </div>
+          </div>
+          <div class="form__field">
+            <label class="form__label label-md" for="surname">Surname</label>
+            <div class="form-input">
+              <input
+                class="form-input__field"
+                id="surname"
+                type="text"
+                placeholder="Your surname here"
+                autocomplete="surname"
+                required
+              />
+              <span class="form-input__error">Filed error. Please fix it</span>
+            </div>
+          </div>
+          <div class="form__field">
+            <label
+              class="form__label label-md"
+              for="education-drop"
+              id="education-label"
+              >Education</label
+            >
+            <div
+              class="custom-drop-down custom-drop-down--white"
+              id="education-drop"
+            >
+              <button
+                class="custom-drop"
+                aria-haspopup="listbox"
+                aria-controls="education-listbox"
+                aria-expanded="false"
+                aria-labelledby="education-label"
+                aria-activedescendant=""
+                role="combobox"
+                tabindex="0"
+                type="button"
+              >
+                <span> More Articles </span>
+                <svg aria-hidden="true">
+                  <use href="img/icons/sprite.svg#arrow-down"></use>
+                </svg>
+              </button>
+              <ul
+                id="education-listbox"
+                role="listbox"
+                aria-labelledby="education-label"
+                tabindex="-1"
+              >
+                <li
+                  id="education-option-html"
+                  class="custom-option-drop"
+                  role="option"
+                  aria-selected="false"
+                  option="option-html"
+                  data-id="html"
+                >
+                  HTML
+                </li>
+                <li
+                  id="education-option-css"
+                  class="custom-option-drop"
+                  role="option"
+                  aria-selected="false"
+                  option="option-css"
+                  data-id="css"
+                >
+                  CSS
+                </li>
+                <li
+                  id="education-option-js"
+                  class="custom-option-drop"
+                  role="option"
+                  aria-selected="false"
+                  option="option-js"
+                  data-id="js"
+                >
+                  JavaScript
+                </li>
+                <li
+                  id="education-option-react"
+                  class="custom-option-drop"
+                  role="option"
+                  aria-selected="false"
+                  option="option-react"
+                  data-id="react"
+                >
+                  React
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="form__field">
+            <label class="form__label label-md" for="message">Message</label>
+            <div class="form-input form-input--textarea">
+              <div class="form-input__wrapper">
+                <textarea
+                  class="form-input__field"
+                  id="message"
+                  placeholder="Textarea"
+                  maxlength="500"
+                ></textarea>
+                <span class="form-input__count">0/500</span>
+              </div>
+            </div>
+          </div>
+          <label class="form-checkbox" for="consent">
+            <input
+              type="checkbox"
+              name="consent"
+              id="consent"
+              class="form-checkbox__input"
+            />
+            <span class="form-checkbox__checkmark"></span>
+            I give consent to the processing of my personal data given in the
+            contact form above under the terms and conditions of Grid Dynamics
+            Privacy Policy.
+          </label>
+        </form>
+      </section>
     </main>
+    <footer class="footer section-center">
+      <div class="footer__wrapper section-max-width p-right p-left">
+        <img src="img/assets/blur-footer.webp" alt="" class="footer__blur" />
+        <div class="footer__left">
+          <img
+            src="img/images/logo.svg"
+            alt="Hounter Logo"
+            class="footer__logo"
+          />
+          <p class="grey-2">
+            We provide information about properties such as houses, villas and
+            apartments to help people find their dream home
+          </p>
+          <ul class="footer__social-list">
+            <li>
+              <a href="#" aria-label="Visit our Facebook page">
+                <img
+                  src="img/images/facebook.svg"
+                  alt="Facebook Icon"
+                  loading="lazy"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="#" aria-label="Visit our Twitter profile">
+                <img
+                  src="img/images/twitter.svg"
+                  alt="Twitter Icon"
+                  loading="lazy"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="#" aria-label="Visit our Instagram profile">
+                <img
+                  src="img/images/instagram.svg"
+                  alt="Instagram Icon"
+                  loading="lazy"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="#" aria-label="Visit our Pinterest board">
+                <img
+                  src="img/images/pinster.svg"
+                  alt="Pinterest Icon"
+                  loading="lazy"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer__right">
+          <div class="column">
+            <h4 class="subtitle">Property</h4>
+            <ul class="column__list">
+              <li class="column__item">
+                <a href="#" class="column__link">House</a>
+              </li>
+              <li class="column__item">
+                <a href="#" class="column__link">Apartment</a>
+              </li>
+              <li class="column__item">
+                <a href="#" class="column__link">Villa</a>
+              </li>
+            </ul>
+          </div>
+          <div class="column">
+            <h4 class="subtitle">Article</h4>
+            <ul class="column__list">
+              <li class="column__item">
+                <a href="#" class="column__link">New Article</a>
+              </li>
+              <li class="column__item">
+                <a href="#" class="column__link">Popular Article</a>
+              </li>
+              <li class="column__item">
+                <a href="#" class="column__link">Most Read</a>
+              </li>
+              <li class="column__item">
+                <a href="#" class="column__link">Tips & Tricks</a>
+              </li>
+            </ul>
+          </div>
+          <div class="column">
+            <h4 class="subtitle">Contact</h4>
+            <ul class="column__list">
+              <li class="column__item">
+                <a
+                  href="https://maps.google.com/?q=2464 Royal Ln. Mesa, New Jersey 45463"
+                  class="column__link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  2464 Royal Ln. Mesa, New Jersey 45463
+                </a>
+              </li>
+              <li class="column__item">
+                <a href="tel:+16715550110" class="column__link"
+                  >(671) 555-0110</a
+                >
+              </li>
+              <li class="column__item">
+                <a href="mailto:info@hounter.com" class="column__link"
+                  >info@hounter.com</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="cookie">
+      <svg class="cookie__icon">
+        <use href="img/icons/sprite.svg#Cookie"></use>
+      </svg>
+      <p class="semi-bold-text cookie__text">We are using cookies</p>
+
+      <button class="cookie__close" aria-label="Close Cookie Button">
+        <svg class="cookie__cross" aria-hidden="true">
+          <use href="img/icons/sprite.svg#Cross"></use>
+        </svg>
+      </button>
+    </div>
   </body>
 </html>
