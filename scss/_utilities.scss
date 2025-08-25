@@ -6,7 +6,7 @@
 
 .section-center {
   @media (min-width: $max-width) {
-    margin-left: calc((100vw - $max-width) / 2);
+    margin-left: $horizontal-margin;
   }
 }
 
@@ -33,4 +33,66 @@
   height: 1px;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
+}
+
+.description-text {
+  color: $secondary;
+  position: relative;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+
+  &::before {
+    content: "";
+    display: block;
+    background-color: $secondary;
+    height: 0.1rem;
+    width: 3.2rem;
+
+    position: absolute;
+    left: -3.6rem;
+    top: 0.7rem
+  }
+
+  &--top {
+    text-align: center;
+
+    &::before {
+      top: -0.7rem;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: $space-md;
+
+  &__image {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+
+    &--big {
+      width: 5.6rem;
+      height: 5.6rem;
+    }
+  }
+
+  &__add {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
