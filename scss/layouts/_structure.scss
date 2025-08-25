@@ -1,0 +1,9 @@
+@use "../variables" as *;
+
+.container {
+  max-width: $max-width;
+
+  @media (min-width: $max-width) {
+    margin-left: calc((100vw - $max-width) / 2);
+  }
+}

@@ -1,9 +1,24 @@
 @use "base";
 @use "typography";
 @use "variables";
+@use "utilities";
 
 @use "uikit";
+
 @use "components/buttons.scss";
 @use "components/custom-drop-down.scss";
 @use "components/inputs.scss";
 @use "components/labels.scss";
+@use "components/carousel.scss";
+
+@use "layouts/structure";
+@use "layouts/header";
+@use "layouts/hero";
+@use "layouts/recommendations";
+@use "layouts/offer";
+@use "layouts/reviews";
+@use "layouts/articles";
+@use "layouts/subscribe";
+@use "layouts/join";
+@use "layouts/footer";
+@use "layouts/cookie";
