@@ -52,27 +52,97 @@
     />
   </head>
   <body>
-    <header class="header section-max-width section-center p-left p-right">
-      <a href="/" class="logo">Hounter</a>
-      <nav class="navigation">
-        <ul class="navigation__list">
-          <li class="navigation__item">
-            <a class="navigation__link" href="#">Link</a>
-          </li>
-          <li class="navigation__item">
-            <a class="navigation__link" href="#">Link</a>
-          </li>
-          <li class="navigation__item">
-            <a class="navigation__link" href="#">Link</a>
-          </li>
-          <li class="navigation__item">
-            <a class="navigation__link" href="#">Link</a>
-          </li>
-        </ul>
-      </nav>
+    <header class="header section-center">
+      <div class="header__wrapper section-max-width p-left p-right">
+        <img src="img/images/logo.svg" alt="Logo Image" class="header__logo" />
+        <nav class="navigation">
+          <ul class="navigation__list">
+            <li class="navigation__item">
+              <a class="navigation__link" href="#">About Us</a>
+            </li>
+            <li class="navigation__item">
+              <a class="navigation__link" href="#">Article</a>
+            </li>
+            <li class="navigation__item">
+              <div class="custom-drop-down" id="property-drop">
+                <button
+                  class="custom-drop"
+                  aria-haspopup="listbox"
+                  aria-controls="property-listbox"
+                  aria-expanded="false"
+                  aria-labelledby="property-label"
+                  role="combobox"
+                  aria-activedescendant=""
+                  tabindex="0"
+                >
+                  <span id="property-label"> Property </span>
+                  <svg>
+                    <use href="img/icons/sprite.svg#arrow-down"></use>
+                  </svg>
+                </button>
+                <ul
+                  id="property-listbox"
+                  role="listbox"
+                  aria-labelledby="property-label"
+                  tabindex="-1"
+                >
+                  <li
+                    id="property-option-html"
+                    class="custom-option-drop"
+                    role="option"
+                    aria-selected="false"
+                    option="option-html"
+                    data-id="html"
+                  >
+                    HTML
+                  </li>
+                  <li
+                    id="property-option-css"
+                    class="custom-option-drop"
+                    role="option"
+                    aria-selected="false"
+                    option="option-css"
+                    data-id="css"
+                  >
+                    CSS
+                  </li>
+                  <li
+                    id="property-option-js"
+                    class="custom-option-drop"
+                    role="option"
+                    aria-selected="false"
+                    option="option-js"
+                    data-id="js"
+                  >
+                    JavaScript
+                  </li>
+                  <li
+                    id="property-option-react"
+                    class="custom-option-drop"
+                    role="option"
+                    aria-selected="false"
+                    option="option-react"
+                    data-id="react"
+                  >
+                    React
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="navigation__item">
+              <button class="btn btn--white">Sign Up</button>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <main>
       <section class="hero section-center">
+        <img
+          src="img/assets/blur-footer.webp"
+          alt="Bluered Image"
+          class="hero__blur"
+        />
         <div class="hero__intro p-left p-right">
           <div class="hero__text">
             <h1 class="h-1">
