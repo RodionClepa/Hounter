@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  position: relative;
 
   &__field {
     border: 0;
@@ -29,7 +30,7 @@
     }
 
 
-    &:invalid {
+    &:required:user-invalid {
       outline: 1px solid $danger;
 
       &+.form-input__error {
@@ -44,6 +45,8 @@
     font-size: 1.2rem;
     font-weight: $weight-regular;
     margin-left: $space-lg;
+    position: absolute;
+    top: 100%;
   }
 
   &--location {
@@ -89,6 +92,9 @@
       padding-bottom: 3.2rem;
       resize: vertical;
       min-height: 10rem;
+      white-space: pre-wrap;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
     }
 
     .form-input__count {
