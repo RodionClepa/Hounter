@@ -23,6 +23,12 @@
     }
   }
 
+  &__image {
+    width: 23rem;
+    height: 18rem;
+    object-fit: cover;
+  }
+
   &__line {
     width: 40px;
     height: 2px;
