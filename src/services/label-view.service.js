@@ -3,7 +3,7 @@ export function labelView(type) {
     return `
       <span class="slider__image-label label label--popular">
         <svg class="btn__icon">
-          <use xlink:href="img/icons/sprite.svg#fire"></use>
+          <use href="img/icons/sprite.svg#fire"></use>
         </svg>
         Popular
       </span>
@@ -12,7 +12,7 @@ export function labelView(type) {
     return `
       <span class="slider__image-label label label--new-house">
         <svg class="btn__icon">
-          <use xlink:href="img/icons/sprite.svg#House"></use>
+          <use href="img/icons/sprite.svg#House"></use>
         </svg>
         New house
       </span>
@@ -21,7 +21,7 @@ export function labelView(type) {
     return `
       <span class="slider__image-label label label--deals">
         <svg class="btn__icon">
-          <use xlink:href="img/icons/sprite.svg#Wallet"></use>
+          <use href="img/icons/sprite.svg#Wallet"></use>
         </svg>
         Best Deals
       </span>
